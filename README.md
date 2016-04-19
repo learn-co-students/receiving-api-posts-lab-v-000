@@ -8,6 +8,7 @@
 
 ## Introduction
 
+
 In this lab, we're going to continue to enhance our product and order
 system, this time updating the product creation page to create and
 display new products without requiring a refresh or redirect.
