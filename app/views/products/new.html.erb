@@ -10,6 +10,32 @@
   <%= f.text_area :description %>
   <br />
   <%= f.label :inventory %>
-  <%= f.text_field :inventory %>
+  <%= f.text_field :inventory %><br>
+
   <%= f.submit "submit" %>
 <% end %>
+
+<h2 id="productName"></h2>
+<h3 id="productInventory"></h3>
+<h3 id="productPrice"></h3>
+<p id="productDescription"></p>
+
+<script type="text/javascript" charset="utf-8">
+
+$(function() {
+  $('form').submit(function(event) {
+    event.preventDefault();
+    var values = $(this).serialize();
+    var posting = $.post('/products', values);
+
+    posting.done(function(data) {
+      var prod = data["product"];
+
+      $('#productName').text(prod["name"]);
+      $('#productInventory').text("Inventory: " + prod["inventory"]);
+      $('#productPrice').text("$" + prod["price"]);
+      $('#productDescription').text(prod["description"]);
+    });
+  });
+});
+</script>
