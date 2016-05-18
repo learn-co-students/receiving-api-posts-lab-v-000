@@ -26,7 +26,6 @@
   $(function(){
     $('form').submit(function(event){
       event.preventDefault();
-      $('.result').show();
       
       var values = $(this).serialize();
       
@@ -39,6 +38,7 @@
         $(".productInventory").text(product["inventory"]);
         $(".productDescription").text(product["description"]);
       });
+      $('.result').show();
     });
   });
 </script>
