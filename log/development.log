@@ -1693,3 +1693,37 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 72.231.3.109 at 2016-06-14 23:40:23 +0000
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 20ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 72.231.3.109 at 2016-06-14 23:40:31 +0000
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 347ms (Views: 339.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for 72.231.3.109 at 2016-06-14 23:40:35 +0000
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (419.1ms)
+Completed 200 OK in 437ms (Views: 436.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 72.231.3.109 at 2016-06-14 23:40:47 +0000
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3SfoynVQrdRBC2OcKSvSHcW8P+7kjtmYkTb+VIcVwacct2OKlxdymM4g7r9at1+AlMLopwxsHn1VBxpbv1ItSg==", "product"=>{"name"=>"Test Prod", "price"=>"1", "description"=>"sdfasdfasdf", "inventory"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Test Prod"], ["description", "sdfasdfasdf"], ["inventory", 1], ["price", 1], ["created_at", "2016-06-14 23:40:47.621297"], ["updated_at", "2016-06-14 23:40:47.621297"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 22]]
+Completed 201 Created in 44ms (Views: 33.9ms | ActiveRecord: 4.5ms)
