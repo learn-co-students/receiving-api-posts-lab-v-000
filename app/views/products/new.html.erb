@@ -13,3 +13,21 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    // create event listener for submit of form
+    $('form').submit(function(event) {
+      // prevent Default of submission to product#create
+      event.preventDefault();
+      // take the form data and use jQuery serialize
+      var values = $(this).serialize();
+      //pass jQuery post the url and serialized values
+      var posting = $.post('/products', values)
+      // use posting object to specify what should happen when AJAX request is done
+      posting.done(function(data) {
+        alert("This is working!");
+      });
+    });
+  });
+</script>
