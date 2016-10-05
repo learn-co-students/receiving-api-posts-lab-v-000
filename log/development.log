@@ -1693,3 +1693,1398 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2016-10-05 11:25:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 837ms (Views: 798.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for ::1 at 2016-10-05 11:26:01 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:26:03 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (807.5ms)
+Completed 200 OK in 832ms (Views: 831.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:30:12 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EaqiKBUFjz4HnotyK4vUGoYvMe8SE0lpDTnylNcgl87DnJSUGDHfpWvhy9blntTlkm3PR93l3YTe5gdMt6r2Yw==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.0ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:30:12.152797"], ["updated_at", "2016-10-05 15:30:12.152797"]]
+  [1m[35m (12.9ms)[0m  commit transaction
+Completed 201 Created in 53ms (Views: 2.8ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:30:40 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:30:40 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:30:41 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L2yHC0zc88hC2JFG7AZnZO2JyPqxFNqwyszJ5bJTQJH9WrG3QeijUy6n0eIiE2eb+cs2Un7iTl0ZEzw90tkhPA==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:30:41.865344"], ["updated_at", "2016-10-05 15:30:41.865344"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 8ms (Views: 1.7ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:30:44 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L2yHC0zc88hC2JFG7AZnZO2JyPqxFNqwyszJ5bJTQJH9WrG3QeijUy6n0eIiE2eb+cs2Un7iTl0ZEzw90tkhPA==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:30:44.796800"], ["updated_at", "2016-10-05 15:30:44.796800"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Completed 201 Created in 9ms (Views: 2.3ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:32:08 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L2yHC0zc88hC2JFG7AZnZO2JyPqxFNqwyszJ5bJTQJH9WrG3QeijUy6n0eIiE2eb+cs2Un7iTl0ZEzw90tkhPA==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:32:08.206767"], ["updated_at", "2016-10-05 15:32:08.206767"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 7ms (Views: 1.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:32:10 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 103ms (Views: 102.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:32:10 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:32:11 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:32:11 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:32:12 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ym9gb5gLjHcEgeBc4E/KJx+yi08kpb80K10jSBm4eQsYWVbTlT/c7Gj+oPguWsrYC/B15+tTK9n4gtaQeTIYpg==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:32:12.472324"], ["updated_at", "2016-10-05 15:32:12.472324"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Completed 201 Created in 8ms (Views: 1.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:32:55 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:32:55 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:32:56 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LoTvTd8usl+ayZUY5uFZhF0wt28KeLupHc97Oq+BUuT8stnx0hrixPa21bwo9Fl7SXJJx8WOL0TOEI7izwszSQ==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:32:56.974854"], ["updated_at", "2016-10-05 15:32:56.974854"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 10ms (Views: 3.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:33:23 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:33:23 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:33:24 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:24 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:33:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:33:25 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:33:25 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:33:25 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:25 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:25 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:25 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:33:25 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:33:26 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K2KEmlJXvZQA0y0t5efGhHI+MDlKoRzeuNe4jGFYpYj5VLImX2PtD2ysbYkr8sZ7ZnzOkYVXiDNrCE1UAdLEJQ==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:33:26.155342"], ["updated_at", "2016-10-05 15:33:26.155342"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Completed 201 Created in 8ms (Views: 2.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:33:38 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:33:38 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:33:47 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:33:47 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:33:49 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZaE2ZStfFHp8n1khuJfAzDT0H9qf+LGK52L+VoiHdha3lwDZJmtE4RDgGYV2gsAzILbhclAOJWc0vQuO6A0Xuw==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:33:49.662124"], ["updated_at", "2016-10-05 15:33:49.662124"]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 12ms (Views: 1.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:34:12 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 45ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:34:12 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:34:13 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jgOxMEIxPIA4A1g/mL+6i1aVhLtTt9w3rtYy/6mrQD5cNYeMTwVsG1R8GJtWqrp0Qtd6E5xBSNp9CccnySEhkw==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:34:13.183864"], ["updated_at", "2016-10-05 15:34:13.183864"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Completed 201 Created in 9ms (Views: 2.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:34:20 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:34:20 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:34:36 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mOTgdNU2rLbiwZmmOdvHWYPSU3e3/jqg0Gi15rgXaUFK0tbI2AL8LY6+2QL3zseml5Ct33gIrk0Dt0A+2J0I7A==", "product"=>{"name"=>"iphone", "price"=>"1", "description"=>"phone", "inventory"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "iphone"], ["description", "phone"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:34:36.833657"], ["updated_at", "2016-10-05 15:34:36.833657"]]
+  [1m[36m (680.3ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 687ms (Views: 3.4ms | ActiveRecord: 680.8ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:35:23 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:35:23 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:35:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:35:24 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:35:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:35:24 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:35:24 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:35:24 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:35:24 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:35:24 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:35:26 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qBnnx60rKT/GEDBak25tvU40BzRf8aEsYdp2fmZpJ8MllEjE4D8P5NnAGWkWLlJ4XoutB6JUmliWJwBmRPFMg==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:35:26.281602"], ["updated_at", "2016-10-05 15:35:26.281602"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Completed 201 Created in 9ms (Views: 2.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:40:18 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 108ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:40:18 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:40:20 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:40:20 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:40:27 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2f6cFfc1yb+0wK7Cpy02/az8Nd2pyPOjn2CbHdZz8VYLyKqp+gGZJNi/7mZpODYCuL7LdWY+Z05Mv27FtvmQ+w==", "product"=>{"name"=>"1", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "1"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:40:27.007528"], ["updated_at", "2016-10-05 15:40:27.007528"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 7ms (Views: 1.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:41:46 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:41:46 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:41:47 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:41:47 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:41:48 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 37ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:41:48 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:41:48 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:41:56 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ofed5dnLzuAO9vjsN0Wkz8LEPSqPSwGk8836TeRcZkosejLmlN/oOxEm0d+yBZsK0nuXGXLuOtAEMIxVxsQNA==", "product"=>{"name"=>"new", "price"=>"1", "description"=>"dsf", "inventory"=>"2"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "new"], ["description", "dsf"], ["inventory", 2], ["price", 1], ["created_at", "2016-10-05 15:41:56.141066"], ["updated_at", "2016-10-05 15:41:56.141066"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Completed 201 Created in 7ms (Views: 2.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:42:07 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:42:07 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:42:12 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OqitVqpHTfoV77W+JAktuBn8IlYhzd88eQNhXrXRXfTonpvqp3MdYXmQ9RrqHC1HDb7c/u47S9Gq3JSG1Vs8WQ==", "product"=>{"name"=>"1", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "1"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:42:12.829549"], ["updated_at", "2016-10-05 15:42:12.829549"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 10ms (Views: 3.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:42:14 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:42:14 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:42:27 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:42:27 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:42:27 -0400
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:42:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:42:28 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:42:28 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:42:28 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:42:28 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:42:28 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:42:28 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:42:31 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gFkSyQjzaEORrDQHFEnk3KiYnxY/ItjmEc9yu+yrdERSbyR1Bcc42P3TdKPaXOQjvNphvvDUTAvCEIdjjCEV6Q==", "product"=>{"name"=>"1", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "1"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:42:31.727267"], ["updated_at", "2016-10-05 15:42:31.727267"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Completed 201 Created in 12ms (Views: 5.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:43:57 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:43:57 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:44:02 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rIVUQRdozVO2MaKVuvJ6VB1luV8FqbmdhaCOLuW2gvl+s2L9GlydyNpO4jF053qrCSdH98pfLXBWf3v2hTzjVA==", "product"=>{"name"=>"1", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "1"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:44:02.088175"], ["updated_at", "2016-10-05 15:44:02.088175"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 7ms (Views: 2.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:45:46 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:45:46 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:45:47 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:45:47 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:45:52 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uoXD10OGexfXCc5R0YGSuG/xrdlletMe5S7Um/klk4hos/VrTrIrjLt2jvUflJJHe7NTcaqMR/M28SFDma/yJQ==", "product"=>{"name"=>"1", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "1"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:45:52.455566"], ["updated_at", "2016-10-05 15:45:52.455566"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 201 Created in 7ms (Views: 1.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:46:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (660.8ms)
+Completed 200 OK in 1158ms (Views: 1127.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:46:56 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hS1/3P97ml7szL5wG3scwmzOmsRhKqZ3o2g3Tc89AGRXG0lg8k/KxYCz/tTVbhw9eIxkbK7cMppwt8KVr7dhyQ==", "product"=>{"name"=>"11", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "11"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:46:56.460806"], ["updated_at", "2016-10-05 15:46:56.460806"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 201 Created in 26ms (Views: 1.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:48:23 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:48:23 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:48:27 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ywu6SXfdpQNbW8wC2B7oE1WfjYTfGGKt73GAGXhGVUmxPYz1eun1mDckjKYWC+jsQd1zLBDu9kA8rnXBGMw05A==", "product"=>{"name"=>"1", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "1"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2016-10-05 15:48:27.486119"], ["updated_at", "2016-10-05 15:48:27.486119"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 7ms (Views: 2.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:50:37 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:50:37 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:50:49 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4PWtbQ9N9sldL/d5J5fK9E8BAsg6gi5LIunuuaVNrF0yw5vRAnmmUjFQt93pgsoLW0P8YPV0uqbxNhthxcfN8A==", "product"=>{"name"=>"iphone", "price"=>"500", "description"=>"phone", "inventory"=>"4"}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "iphone"], ["description", "phone"], ["inventory", 4], ["price", 500], ["created_at", "2016-10-05 15:50:49.281226"], ["updated_at", "2016-10-05 15:50:49.281226"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Completed 201 Created in 7ms (Views: 1.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:53:03 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:53:03 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:53:05 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:53:05 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:53:10 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dWIYo1Mn+TmgmjFpk+hFJ8frz9Tcpm37SLIBSgkUOEunVC4fXhOposzlcc1d/UXY06kxfBNQ+RabbfSSaZ5Z5g==", "product"=>{"name"=>"444", "price"=>"5", "description"=>"5", "inventory"=>"5"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "444"], ["description", "5"], ["inventory", 5], ["price", 5], ["created_at", "2016-10-05 15:53:10.935934"], ["updated_at", "2016-10-05 15:53:10.935934"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 7ms (Views: 2.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:54:09 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 35ms (Views: 25.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:54:10 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:54:14 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WOrliZ7vPlw2DoZxnv720ccnSwVise2oEVFPZfMbKHSK3NM1k9tux1pxxtVQ6/Yu02W1ra1HeUXCjrq9k5FJ2Q==", "product"=>{"name"=>"1", "price"=>"6", "description"=>"6", "inventory"=>"6"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "1"], ["description", "6"], ["inventory", 6], ["price", 6], ["created_at", "2016-10-05 15:54:14.940059"], ["updated_at", "2016-10-05 15:54:14.940059"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/products
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for ::1 at 2016-10-05 11:54:14 -0400
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 63ms (Views: 61.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:54:34 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:54:34 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:54:39 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Aqc/s1Fh5iUru22M/Oy4nN8jWyiUbiwdWeP/Rc4TxzzQkQkPXFW2vkfELSgy+bhjy2GlgFuYuPCKPAqdrpmmkQ==", "product"=>{"name"=>"3", "price"=>"5", "description"=>"5", "inventory"=>"5"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "3"], ["description", "5"], ["inventory", 5], ["price", 5], ["created_at", "2016-10-05 15:54:39.606211"], ["updated_at", "2016-10-05 15:54:39.606211"]]
+  [1m[35m (427.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/products
+Completed 302 Found in 432ms (ActiveRecord: 427.9ms)
+
+
+Started GET "/products" for ::1 at 2016-10-05 11:54:40 -0400
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 152ms (Views: 150.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:55:46 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 38ms (Views: 28.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:55:46 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:55:46 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:55:46 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:55:46 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:55:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:55:47 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:55:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:55:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:55:47 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:55:53 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VwTC5If+N7jVov8Wx+/6ApEcxhtVb62CPAH6pu9ytSqFMvRYispnI7ndv7IJ+vr9hV44s5qZOW/v3g9+j/jUhw==", "product"=>{"name"=>"4", "price"=>"7", "description"=>"7", "inventory"=>"7"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "4"], ["description", "7"], ["inventory", 7], ["price", 7], ["created_at", "2016-10-05 15:55:53.381578"], ["updated_at", "2016-10-05 15:55:53.381578"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 201 Created in 7ms (Views: 2.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:56:20 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 23.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:56:20 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:56:22 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z9nNxHogtYTXtTc2qwmKhy+Ll/MKFY86bv+KUJgo6Qe17/t4dxTlH7vKd5JlHIp4O8lpW8XjG9e9IH+I+KKIqg==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:56:22.666314"], ["updated_at", "2016-10-05 15:56:22.666314"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 46]]
+Completed 201 Created in 145ms (Views: 137.2ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:56:23 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z9nNxHogtYTXtTc2qwmKhy+Ll/MKFY86bv+KUJgo6Qe17/t4dxTlH7vKd5JlHIp4O8lpW8XjG9e9IH+I+KKIqg==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:56:23.138393"], ["updated_at", "2016-10-05 15:56:23.138393"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 47]]
+Completed 201 Created in 9ms (Views: 2.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:56:29 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:56:29 -0400
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:56:30 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:56:30 -0400
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:56:31 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8lIIez1hHB/cnkmpN/XMOgHlTcyTVx+dj07Pyvq7uRcgZD7HMFVMhLDhCQ354MzFFaezZFyhi3BckToSmjHYug==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:56:31.612375"], ["updated_at", "2016-10-05 15:56:31.612375"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 48]]
+Completed 201 Created in 9ms (Views: 2.2ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/products" for ::1 at 2016-10-05 11:56:32 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8lIIez1hHB/cnkmpN/XMOgHlTcyTVx+dj07Pyvq7uRcgZD7HMFVMhLDhCQ354MzFFaezZFyhi3BckToSmjHYug==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", ""], ["description", ""], ["created_at", "2016-10-05 15:56:32.246006"], ["updated_at", "2016-10-05 15:56:32.246006"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 49]]
+Completed 201 Created in 8ms (Views: 2.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/products/new" for ::1 at 2016-10-05 11:56:32 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:32 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 11:56:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-10-05 11:56:32 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-10-05 11:56:32 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-10-05 11:56:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-10-05 11:56:32 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 11:56:33 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:33 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 11:56:33 -0400
