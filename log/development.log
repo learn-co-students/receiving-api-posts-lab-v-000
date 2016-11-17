@@ -1693,3 +1693,45 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2016-11-16 22:07:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 744ms (Views: 720.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/12.json" for ::1 at 2016-11-16 22:07:18 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mOrder Load (0.6ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 12]]
+Completed 200 OK in 60ms (Views: 40.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/21.json" for ::1 at 2016-11-16 22:07:22 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 22:13:19 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (404.3ms)
+Completed 200 OK in 430ms (Views: 428.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 22:13:23 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 22:13:26 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
