@@ -2119,3 +2119,18 @@ Processing by ProductsController#create as */*
   [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 29]]
 Completed 201 Created in 15ms (Views: 5.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products" for ::1 at 2016-11-17 17:11:15 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 120ms (Views: 115.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/25.json" for ::1 at 2016-11-17 17:11:23 -0700
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"25"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.5ms)
