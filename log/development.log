@@ -1693,3 +1693,91 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-11-30 13:59:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (242.2ms)
+Completed 200 OK in 501ms (Views: 488.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-11-30 13:59:38 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M7DQY8tg6jszESNvrHP9B230ghqvrkrAo74aYN1ZxODWC8WGyBDjZARuzAaFtK+/LBgbwD/xi/9qgPhmiWxJ+Q==", "product"=>{"name"=>"abc", "price"=>"5", "description"=>"def", "inventory"=>"7"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "abc"], ["description", "def"], ["inventory", 7], ["price", 5], ["created_at", "2016-11-30 18:59:38.675264"], ["updated_at", "2016-11-30 18:59:38.675264"]]
+  [1m[35m (4.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/products
+Completed 302 Found in 11ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2016-11-30 13:59:38 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-11-30 13:59:50 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-11-30 14:01:02 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 16.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-11-30 14:01:20 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oM2HdhHRbylAkBbeSeq8JyXL2kcrS1EDm8/fB+8csD5FdpKTEqFmdnfv+bdgLe6fZCdDnbsUkDxS8T0Buyk9Jw==", "product"=>{"name"=>"widget a", "price"=>"7", "description"=>"best ever", "inventory"=>"9"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "widget a"], ["description", "best ever"], ["inventory", 9], ["price", 7], ["created_at", "2016-11-30 19:01:20.687814"], ["updated_at", "2016-11-30 19:01:20.687814"]]
+  [1m[35m (4.1ms)[0m  commit transaction
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+Completed 201 Created in 52ms (Views: 43.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-11-30 14:01:39 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-11-30 14:01:52 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tDtd/q8oK5kZzzgrSXBc7jPC/ES8EFdRVVoolBOmw4RRgEgbrFgixi6w10Jgtw5Wci5lnixPlm6cZMqSR5NOnQ==", "product"=>{"name"=>"widget b", "price"=>"9", "description"=>"kind of good", "inventory"=>"11"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "widget b"], ["description", "kind of good"], ["inventory", 11], ["price", 9], ["created_at", "2016-11-30 19:01:52.565519"], ["updated_at", "2016-11-30 19:01:52.565519"]]
+  [1m[35m (5.4ms)[0m  commit transaction
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
+Completed 201 Created in 11ms (Views: 2.1ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-11-30 14:03:11 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tDtd/q8oK5kZzzgrSXBc7jPC/ES8EFdRVVoolBOmw4RRgEgbrFgixi6w10Jgtw5Wci5lnixPlm6cZMqSR5NOnQ==", "product"=>{"name"=>"widget b", "price"=>"9", "description"=>"kind of good", "inventory"=>"11"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "widget b"], ["description", "kind of good"], ["inventory", 11], ["price", 9], ["created_at", "2016-11-30 19:03:11.597569"], ["updated_at", "2016-11-30 19:03:11.597569"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+Completed 201 Created in 18ms (Views: 2.0ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-11-30 14:03:14 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-11-30 14:03:29 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ab0IQ2Db9TMKCgZFyhZjM18a1KZ5DdVSHVG4hVNOT5uMBh2mY6v8bD116Szj0TGLHvZNfOlSFG3Ub1qDB3vCgg==", "product"=>{"name"=>"widget c", "price"=>"8", "description"=>"gere", "inventory"=>"7"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "widget c"], ["description", "gere"], ["inventory", 7], ["price", 8], ["created_at", "2016-11-30 19:03:29.269792"], ["updated_at", "2016-11-30 19:03:29.269792"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 26]]
+Completed 201 Created in 9ms (Views: 2.2ms | ActiveRecord: 4.4ms)
