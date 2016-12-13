@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'pry'
 gem 'pry-nav'
@@ -42,6 +42,7 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda'
   gem 'selenium-webdriver'
+  gem 'poltergeist'
 end
 
 group :development do
