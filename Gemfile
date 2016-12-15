@@ -42,6 +42,7 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda'
   gem 'selenium-webdriver'
+  gem 'better_errors'
 end
 
 group :development do
