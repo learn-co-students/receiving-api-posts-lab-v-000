@@ -13,3 +13,32 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div class="new-product">
+  <p class="name"></p>
+  <p class="description"></p>
+  <p class="price"></p>
+  <p class="inventory"></p>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('form').on("submit", function(e) {
+      e.preventDefault()
+      data = $(this).serialize()
+      $.ajax({
+        url: $(this).attr("action"),
+        type: "POST",
+        data: data,
+        dataType: "json"
+      })
+      .done(function(response) {
+        console.log(response)
+        $(".name").text(response["name"])
+        $(".description").text(response["description"])
+        $(".price").text("$" + response["price"])
+        $(".inventory").text(response["inventory"])
+      })
+    })
+  })
+</script>
