@@ -1693,3 +1693,34 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-04-23 21:12:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 298ms (Views: 286.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-04-23 21:12:54 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (346.3ms)
+Completed 200 OK in 362ms (Views: 360.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-04-23 21:14:07 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-04-23 21:14:39 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MH4FKyisx3RdVx2qmGR2bd6RGRFvLvvphy40HrQQusLxBu1D4ITeL5f4uar7+3my5gOOJszGgks1WAFNb+6MDw==", "product"=>{"name"=>"Blue Hat", "price"=>"144", "description"=>"Dennis Hopper threw it out the window in an old movie.", "inventory"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Blue Hat"], ["description", "Dennis Hopper threw it out the window in an old movie."], ["inventory", 1], ["price", 144], ["created_at", "2017-04-24 01:14:39.033849"], ["updated_at", "2017-04-24 01:14:39.033849"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.5ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (29.13ms)
+Completed 201 Created in 46ms (Views: 38.8ms | ActiveRecord: 3.4ms)
