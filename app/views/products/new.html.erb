@@ -13,3 +13,28 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<p id="string"></p>
+ 
+<script type="text/javascript">
+  $(function () {
+    $('form').submit(function(e) {
+      //prevent form from submitting the default way
+      e.preventDefault();
+      
+      var values = $(this).serialize();
+ 
+      var product = $.post('/products', values);
+ 
+      product.done(function(data) {
+        var description = (data["description"]);
+        var name = (data["name"]);
+        var price = (data["price"]);
+        var inventory = (data["inventory"]);
+
+        $("#string").html(description + name + "$" + price + inventory);
+      });
+    });
+  });
+  
+</script>
