@@ -1693,3 +1693,23 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+Started GET "/products/new" for 127.0.0.1 at 2017-06-11 16:38:49 -0500
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /home/seth/.rvm/gems/ruby-2.4.1/gems/activerecord-5.0.2/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (442.4ms)
+Completed 200 OK in 1045ms (Views: 1015.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-06-11 16:39:14 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lMORrOv5IZPsxeDhxHsRqUd2NQ//NKjX/glFyxcpV2NTFQLb5gFaqU+JbWfiN6U4PeC797W/h1ip09H75waPxg==", "product"=>{"name"=>"Walkie Talkie", "price"=>"70.00", "description"=>"Talk to people from far away with these things.!", "inventory"=>"10"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Walkie Talkie"], ["price", 70], ["created_at", 2017-06-11 21:39:14 UTC], ["updated_at", 2017-06-11 21:39:14 UTC], ["inventory", 10], ["description", "Talk to people from far away with these things.!"]]
+  [1m[35m (30.9ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (39.05ms)
+Completed 201 Created in 103ms (Views: 67.8ms | ActiveRecord: 32.1ms)
+
+
