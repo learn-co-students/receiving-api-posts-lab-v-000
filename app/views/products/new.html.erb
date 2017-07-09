@@ -11,5 +11,34 @@
   <br />
   <%= f.label :inventory %>
   <%= f.text_field :inventory %>
-  <%= f.submit "submit" %>
+  <div class="actions">
+    <%= f.submit "submit" %>
+  </div>
 <% end %>
+
+<!-- to post the product information after creation -->
+<div id="productResult">
+  <h1 id="productName"></h1>
+  <p id="productInventory"></p>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+</div>
+
+<!-- to handle the submit from the form -->
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('form').submit(function(event){
+      event.preventDefault();
+        var values = $(this).serialize();
+         var posting = $.post('/products', values);
+         posting.done(function(data) {
+        var product = data;
+
+        $("#productName").text(product["name"]);
+        $("#productInventory").text(product["inventory"]);
+        $("#productPrice").text('$' + product["price"]);
+        $("#productDescription").text(product["description"]);
+      });
+    });
+  });
+</script>
