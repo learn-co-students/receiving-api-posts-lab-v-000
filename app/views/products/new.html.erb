@@ -1,15 +1,29 @@
-<h1>New Product</h1>
+<h2>New Product</h2>
 <%= form_for @product do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <br />
   <%= f.label :price %>
   <%= f.text_field :price %>
-  <br />
   <%= f.label :description %>
   <%= f.text_area :description %>
-  <br />
   <%= f.label :inventory %>
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div class="product_info">
+  <p class="name"></p>
+  <p class="price"></p>
+  <p class="description"></p>
+</div>
+
+<script type="text/javascript">
+  $('form').on('submit', function(event) {
+    event.preventDefault()
+    $.post("/products", $(this).serialize(), function(product) {
+      $('.name').append(product.name)
+      $('.price').append('$' + product.price)
+      $('.description').append(product.description)
+    })
+  })
+</script>
