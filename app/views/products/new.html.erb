@@ -1,4 +1,4 @@
-<h1>New Product</h1>
+<h1 id="heading">New Product</h1>
 <%= form_for @product do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -13,3 +13,33 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div id="productContainer">
+  <h2 id="productName"></h2>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+  <p id="productInventory"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('form').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+ 
+      var values = $(this).serialize();
+ 
+      var product = $.post('/products', values);
+ 
+      product.done(function(data) {
+        $('form').html("")
+        $('#heading').text("");
+        var product = data;
+        $("#productName").text(product["name"]);
+        $("#productInventory").text(product["inventory"]);
+        $("#productPrice").text("$"+product["price"]);
+        $("#productDescription").text(product["description"]);
+      });
+    });
+  });
+</script>
