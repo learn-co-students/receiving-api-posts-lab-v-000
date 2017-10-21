@@ -1693,3 +1693,87 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-10-17 21:05:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (756.5ms)
+Completed 200 OK in 1763ms (Views: 1725.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-10-17 21:06:28 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjsBykVEZVi0BSj5b0LuO3DUuqj1dXyKF0S7PXNUEfXOZPIRvUnQuBXwVQLw4oCcco9oPcL6XZ8cv5/A06Z08A==", "product"=>{"name"=>"phone", "price"=>"100", "description"=>"nice phone", "inventory"=>"1"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "phone"], ["description", "nice phone"], ["inventory", 1], ["price", 100], ["created_at", "2017-10-18 02:06:28.571030"], ["updated_at", "2017-10-18 02:06:28.571030"]]
+  [1m[35m (256.7ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.12ms)
+Completed 201 Created in 396ms (Views: 120.8ms | ActiveRecord: 266.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-10-17 21:14:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjsBykVEZVi0BSj5b0LuO3DUuqj1dXyKF0S7PXNUEfXOZPIRvUnQuBXwVQLw4oCcco9oPcL6XZ8cv5/A06Z08A==", "product"=>{"name"=>"phone", "price"=>"100", "description"=>"nice phone", "inventory"=>"1"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "phone"], ["description", "nice phone"], ["inventory", 1], ["price", 100], ["created_at", "2017-10-18 02:14:25.875725"], ["updated_at", "2017-10-18 02:14:25.875725"]]
+  [1m[35m (188.8ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (75.55ms)
+Completed 201 Created in 350ms (Views: 108.8ms | ActiveRecord: 190.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-10-17 21:34:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjsBykVEZVi0BSj5b0LuO3DUuqj1dXyKF0S7PXNUEfXOZPIRvUnQuBXwVQLw4oCcco9oPcL6XZ8cv5/A06Z08A==", "product"=>{"name"=>"phone", "price"=>"100", "description"=>"nice phone", "inventory"=>"1"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "phone"], ["description", "nice phone"], ["inventory", 1], ["price", 100], ["created_at", "2017-10-18 02:35:00.326222"], ["updated_at", "2017-10-18 02:35:00.326222"]]
+  [1m[35m (288.3ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (55.91ms)
+Completed 200 OK in 449ms (Views: 106.8ms | ActiveRecord: 291.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-10-17 21:38:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjsBykVEZVi0BSj5b0LuO3DUuqj1dXyKF0S7PXNUEfXOZPIRvUnQuBXwVQLw4oCcco9oPcL6XZ8cv5/A06Z08A==", "product"=>{"name"=>"phone", "price"=>"100", "description"=>"nice phone", "inventory"=>"1"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "phone"], ["description", "nice phone"], ["inventory", 1], ["price", 100], ["created_at", "2017-10-18 02:38:42.614744"], ["updated_at", "2017-10-18 02:38:42.614744"]]
+  [1m[35m (252.1ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (75.17ms)
+Completed 200 OK in 441ms (Views: 132.1ms | ActiveRecord: 256.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-10-17 21:41:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (843.9ms)
+Completed 200 OK in 1417ms (Views: 1369.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-10-17 21:42:10 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 55ms (Views: 54.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-10-17 21:44:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (893.4ms)
+Completed 200 OK in 1340ms (Views: 1295.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-10-17 21:44:28 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GALsOzlrby/olLUcXZuClTnRwtivA3Re6jI+O4izmlSAXR/gwWbaz0lhyOfCO+wyO4oQTZiMVUvhyRrGKEH/UQ==", "product"=>{"name"=>"phone", "price"=>"2", "description"=>"nice phone", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "phone"], ["description", "nice phone"], ["inventory", 1], ["price", 2], ["created_at", "2017-10-18 02:44:28.181043"], ["updated_at", "2017-10-18 02:44:28.181043"]]
+  [1m[35m (372.0ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 26]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (53.8ms)
+Completed 200 OK in 517ms (Views: 128.8ms | ActiveRecord: 376.1ms)
