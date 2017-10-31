@@ -30,6 +30,9 @@
       var new_product = $.post('/products', values);
       new_product.done(function(data){
       // var product = data;
+
+console.log(data)
+
       $('#productName').text(data["name"]);
       $('#productPrice').text(data["price"]);
       $('#productInventory').text(data["inventory"]);
