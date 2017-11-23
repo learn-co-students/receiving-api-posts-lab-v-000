@@ -14,26 +14,23 @@
   <%= f.submit "submit" %>
 <% end %>
 
-<h1 class="productName"></h1>
-<p class="productInventory"></p>
-<p class="productPrice"></p>
-<p class="productDescription"></p>
+<<div id="productResult">
+  <h2 id="productName"></h2>
+  <span id="productPrice"></span>
+  <p id="productDescription"></p>
+</div>
 
 <script type="text/javascript" charset="utf-8">
 $(function () {
-  $(".new-product").on("submit", function (e) {
-    e.preventDefault();
-    var values = $(this).serialize();
-    var posting = $.post("/products", values)
-
-    posting.done(function(data) {
+  $('form').submit(function(event) {
+    event.preventDefault();
+    $.post('/products', $(this).serialize())
+    .done(function(data) {
       var product = data;
-      $(".productName").text(product["name"]);
-      $(".productPrice").text(product["price"]);
-      $(".productDescription").text(product["description"]);
-      $(".productInventory").text(product["inventory"]);
+      $("#productName").text(product["name"]);
+      $("#productPrice").text("$" + product["price"]);
+      $("#productDescription").text(product["description"]);
     });
-    this.reset();
-  })
+  });
 });
 </script>
