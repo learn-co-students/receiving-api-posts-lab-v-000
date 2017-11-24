@@ -1,15 +1,43 @@
 <h1>New Product</h1>
 <%= form_for @product do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :class => "product-input" %>
   <br />
   <%= f.label :price %>
-  <%= f.text_field :price %>
+  <%= f.text_field :price, :class => "product-input" %>
   <br />
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, :class => "product-input" %>
   <br />
   <%= f.label :inventory %>
-  <%= f.text_field :inventory %>
+  <%= f.text_field :inventory, :class => "product-input" %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div id="product-results">
+  <h4 id="product-name"></h4>
+  <p id="product-description"></p>
+  <p id="product-inventory"></p>
+  <p id="product-price"></p>
+
+</div>
+
+<%= link_to 'Home Page', products_path %>
+
+<script type="text/javascript">
+
+$('form').submit(function(e) {
+  e.preventDefault()
+  var values = $(this).serialize()
+  var posting = $.post('/products', values);
+  posting.done(function(data) {
+    var postData = data
+    $('#product-name').text(postData["name"]);
+    $('#product-description').text(postData["description"]);
+    $('#product-inventory').text(postData["inventory"]);
+    $('#product-price').text(postData["price"]);
+    $('.product-input').val("");
+  })
+})
+
+</script>
