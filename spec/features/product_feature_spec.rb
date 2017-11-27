@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'pry'
 RSpec.describe "Products", type: :feature do
   before do
     Product.destroy_all
@@ -15,6 +15,7 @@ RSpec.describe "Products", type: :feature do
       fill_in "Price", with: "2"
       fill_in "Description", with: "This is a very nice product!"
       click_button "submit"
+      # binding.pry
       expect(page.current_path).to eq new_product_path
       expect(page).to have_content "New Product"
       expect(page).to have_content "2"
