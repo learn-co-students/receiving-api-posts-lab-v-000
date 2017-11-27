@@ -17,6 +17,7 @@ The solution for the previous lab has been included for you.
 ## Instructions
 
 1. Update the `new` product page to submit the form via AJAX POST.
+
 2. Update the product `create` action to render a JSON representation of
    the product after successfully creating it.
 3. Display the product details of the newly created product on the `new` page without refreshing or redirecting.
