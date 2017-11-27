@@ -1693,3 +1693,27 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2017-08-06 00:47:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/johnschlesinger/.rvm/gems/ruby-2.3.1/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 38ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2017-08-06 00:47:24 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (466.4ms)
+Completed 200 OK in 803ms (Views: 790.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for ::1 at 2017-08-06 00:47:33 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5NE+PbmDvxcbY2dUw6aZpK7fZWhhJT6Qz0BI1Y0h5+y9qKwJ9XBYc5szGT2Ye07QJw5Xf79+WYEw9d2RoIqUiA==", "product"=>{"name"=>"g", "price"=>"12", "description"=>"ff", "inventory"=>"12"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "g"], ["description", "ff"], ["inventory", 12], ["price", 12], ["created_at", "2017-08-06 04:47:33.880524"], ["updated_at", "2017-08-06 04:47:33.880524"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (76.0ms)
+Completed 201 Created in 119ms (Views: 110.5ms | ActiveRecord: 2.6ms)
