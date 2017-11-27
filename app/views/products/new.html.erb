@@ -1,15 +1,46 @@
 <h1>New Product</h1>
 <%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
   <br />
-  <%= f.label :price %>
-  <%= f.text_field :price %>
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
   <br />
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
   <br />
-  <%= f.label :inventory %>
-  <%= f.text_field :inventory %>
-  <%= f.submit "submit" %>
+  <div class="field">
+    <%= f.label :inventory %>
+    <%= f.text_field :inventory %>
+    <%= f.submit "submit" %>
+  </div>
 <% end %>
+
+<div id="postResult">
+  <h2 id="productName"></h2>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+  <p id="productInventory"></p>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    $('form').submit(function(event){
+      event.preventDefault();
+      var values = $(this).serialize()
+      var posting = $.post('/products', values);
+      posting.done(function(data){
+        $("#productName").text(data["name"])
+        $("#productPrice").text("$" + data["price"])
+        $("#productDescription").text(data["description"])
+        $("#productInventory").text(data["inventory"])
+      })
+    })
+  })
+</script>
