@@ -1693,3 +1693,87 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-01-25 07:33:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 551ms (Views: 530.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-01-25 07:33:22 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (481.0ms)
+Completed 200 OK in 499ms (Views: 498.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-01-25 07:33:22 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-01-25 07:37:27 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-01-25 07:37:53 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-01-25 07:38:02 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6/Mp0HFKFUcFpSz8PR8HH63CwOfm2sV+oSXIM864S2t3Uznm9f0p0OVTs9odF7EohCb5hU69iwVpzEpfrxz9bw==", "product"=>{"name"=>"check", "price"=>"10", "description"=>"checking", "inventory"=>"5"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "check"], ["description", "checking"], ["inventory", 5], ["price", 10], ["created_at", "2017-01-25 12:38:02.350341"], ["updated_at", "2017-01-25 12:38:02.350341"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 17ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-01-25 07:38:02 -0500
+Processing by ProductsController#index as */*
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-01-25 07:47:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (415.6ms)
+Completed 200 OK in 690ms (Views: 651.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-01-25 07:47:30 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1aJUnqda2I3b14Q+PWQrGJijFCdzML+Kj8pl/5qq+U9JAkSoI+3kGjshGxgdbJ0vsUctRdtX8fFHI+eT+w5PSw==", "product"=>{"name"=>"checker", "price"=>"10", "description"=>"checking dat bih", "inventory"=>"5"}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "checker"], ["description", "checking dat bih"], ["inventory", 5], ["price", 10], ["created_at", "2017-01-25 12:47:30.399954"], ["updated_at", "2017-01-25 12:47:30.399954"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (45.81ms)
+Completed 201 Created in 87ms (Views: 71.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-01-25 07:49:04 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-01-25 07:49:16 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZInVrrsUOCHXCoGltuY7UVF5zTJeL2mT5vPfdTFpONX4KcWYP6MEtjf8HoOW7o1meJ30UPZIJ+guGl0ZUM2O0Q==", "product"=>{"name"=>"tester", "price"=>"15", "description"=>"the test", "inventory"=>"5"}}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "tester"], ["description", "the test"], ["inventory", 5], ["price", 15], ["created_at", "2017-01-25 12:49:16.571923"], ["updated_at", "2017-01-25 12:49:16.571923"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.49ms)
+Completed 201 Created in 14ms (Views: 3.0ms | ActiveRecord: 5.1ms)
