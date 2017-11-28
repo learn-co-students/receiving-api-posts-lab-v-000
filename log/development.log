@@ -1693,3 +1693,332 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2017-11-28 12:06:30 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 648ms (Views: 634.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:06:35 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (415.0ms)
+Completed 200 OK in 442ms (Views: 439.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:09:27 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jQFtEB7eV0Iiz62j9c+H4vBdn4Lca4De62Wnt496LxOcXdM7ZU4eD85f2YIQ8SzYrS/SdmHfFk7pZfQuaF/Oeg==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"de", "inventory"=>"4"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "PRO"], ["description", "de"], ["inventory", 4], ["price", 2], ["created_at", "2017-11-28 20:09:27.323839"], ["updated_at", "2017-11-28 20:09:27.323839"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.12ms)
+Completed 201 Created in 26ms (Views: 19.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:09:48 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:10:09 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:20:27 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:20:59 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:22:51 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (65.4ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x007f8dbbbff7c0>:0x007f8dc3a35158>
+Did you mean?  @product):
+    14:   <%= f.submit "submit" %>
+    15: <% end %>
+    16: 
+    17: <% if product %>
+    18: <div id="productResult">
+    19:   <h2 id="productName"></h2>
+    20:   <strong>Price: </strong> <span id="productPrice"></span><br>
+  app/views/products/new.html.erb:17:in `_app_views_products_new_html_erb__4183497747530878397_70123385933900'
+
+
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.1ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.1ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.4ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (141.7ms)
+
+
+Started PUT "/products/console/repl_sessions/1bac0116d11bbe3e1af194868bfe1adf" for ::1 at 2017-11-28 12:23:04 -0800
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:23:47 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (102.7ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x007f8dbbbff7c0>:0x007f8dc525fe18>
+Did you mean?  @product):
+    14:   <%= f.submit "submit" %>
+    15: <% end %>
+    16: 
+    17: <% if product == undefined %>
+    18: <div id="productResult">
+    19:   <h2 id="productName"></h2>
+    20:   <strong>Price: </strong> <span id="productPrice"></span><br>
+  app/views/products/new.html.erb:17:in `_app_views_products_new_html_erb__4183497747530878397_70123437356420'
+
+
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.7ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (64.8ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (132.3ms)
+
+
+Started PUT "/products/console/repl_sessions/f0311ae2753c0e4a764851848fc6bb34" for ::1 at 2017-11-28 12:24:08 -0800
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:25:20 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/paulsnider/Development/code/receiving-api-posts-lab-v-000/app/views/products/new.html.erb:17: `$(' is not allowed as a global variable name
+/Users/paulsnider/Development/code/receiving-api-posts-lab-v-000/app/views/products/new.html.erb:17: syntax error, unexpected end-of-input
+'.freeze; if $("productName").text.blank? 
+              ^):
+  app/views/products/new.html.erb:17: `$(' is not allowed as a global variable name
+  app/views/products/new.html.erb:17: syntax error, unexpected end-of-input
+
+
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.0ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.1ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.8ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (126.9ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:26:42 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/paulsnider/Development/code/receiving-api-posts-lab-v-000/app/views/products/new.html.erb:17: `$(' is not allowed as a global variable name
+/Users/paulsnider/Development/code/receiving-api-posts-lab-v-000/app/views/products/new.html.erb:17: syntax error, unexpected end-of-input
+'.freeze; if $("productName").text.blank? 
+              ^):
+  app/views/products/new.html.erb:17: `$(' is not allowed as a global variable name
+  app/views/products/new.html.erb:17: syntax error, unexpected end-of-input
+
+
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.0ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (51.6ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (129.5ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:26:50 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:28:10 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:28:20 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q3POQf7QtUXQCcvt5UiCDwt8vyL1PfCMh9N2swJS8Bm6L3BqhUD8CDyZv8wAdik1Vg7y1kiJZhyF0yUq5XcRcA==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"descrip", "inventory"=>"4"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "PRO"], ["description", "descrip"], ["inventory", 4], ["price", 2], ["created_at", "2017-11-28 20:28:20.313857"], ["updated_at", "2017-11-28 20:28:20.313857"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 4ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:29:41 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:29:44 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:29:53 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Krj+t1F0wtHBZmARXXmAYvEHVMmINJ6DzFZ1CchlaAY75ECcKuSLnC32FDC4RytYrHUZPTWACBPOViaQL0CJbw==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"des", "inventory"=>"4"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "PRO"], ["description", "des"], ["inventory", 4], ["price", 2], ["created_at", "2017-11-28 20:29:53.628035"], ["updated_at", "2017-11-28 20:29:53.628035"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 201 Created in 7ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:34:52 -0800
+Processing by ProductsController#create as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  app/controllers/products_controller.rb:36:in `product_params'
+  app/controllers/products_controller.rb:21:in `create'
+
+
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (70.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (52.6ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/paulsnider/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (117.9ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:38:21 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 51ms (Views: 34.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:38:30 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G0L/vmz/8mCGSvtQ0fdLPq1DOOQMQsDxrSP0h/5zCfMKHkGVF2+7LWraj3E0yeAE8DF1ELH2VmGvI6ceGVbomg==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"the desc", "inventory"=>"4"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "PRO"], ["description", "the desc"], ["inventory", 4], ["price", 2], ["created_at", "2017-11-28 20:38:30.377670"], ["updated_at", "2017-11-28 20:38:30.377670"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (59.6ms)
+Completed 201 Created in 132ms (Views: 118.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:41:33 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:41:42 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9u8ave2orxSlxtZn+b9XFKy5iAGDfD/b5BjehTR1PuLns6SWljjmWUlWokYcgfwu8cvF9T7IqUvmGI0c01Dfiw==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"desc", "inventory"=>"4"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "PRO"], ["description", "desc"], ["inventory", 4], ["price", 2], ["created_at", "2017-11-28 20:41:42.068894"], ["updated_at", "2017-11-28 20:41:42.068894"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 26]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.27ms)
+Completed 201 Created in 23ms (Views: 18.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products" for ::1 at 2017-11-28 12:42:10 -0800
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:44:47 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:45:01 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+gSuXGeO49piOj1K6nVCzTfaqKwQr76YtfLtswpgjzHrWBB3HB6ql46qSWsPS+n3aqjlWK0bKAi38r4q7UVuWA==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"description", "inventory"=>"3"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "PRO"], ["description", "description"], ["inventory", 3], ["price", 2], ["created_at", "2017-11-28 20:45:01.271047"], ["updated_at", "2017-11-28 20:45:01.271047"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 27]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.57ms)
+Completed 201 Created in 18ms (Views: 14.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:46:33 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:46:56 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rZhWf+0hZ2QY4pkPap/xMX/e3Gw8YAQA3pRaf/P78d28xOhUlrEuKfRy7S6PoVoLIqyRmIHUkpDclAnmFN4QtA==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"great product", "inventory"=>"4"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "PRO"], ["description", "great product"], ["inventory", 4], ["price", 2], ["created_at", "2017-11-28 20:46:56.905568"], ["updated_at", "2017-11-28 20:46:56.905568"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 28]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (32.55ms)
+Completed 201 Created in 39ms (Views: 33.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2017-11-28 12:48:20 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2017-11-28 12:48:33 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BJxzGYuTrAY5dJLuukd3yMf1+YQaG7x9eO85QpWU3nMVwM0y8APlS9Xk5s9fedzymoe0cKevKu1672rbcrE/Gg==", "product"=>{"name"=>"PRO", "price"=>"2", "description"=>"this product is fantabulous", "inventory"=>"4"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "PRO"], ["description", "this product is fantabulous"], ["inventory", 4], ["price", 2], ["created_at", "2017-11-28 20:48:33.546156"], ["updated_at", "2017-11-28 20:48:33.546156"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 29]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (35.05ms)
+Completed 201 Created in 50ms (Views: 35.6ms | ActiveRecord: 6.7ms)
