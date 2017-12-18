@@ -30,6 +30,7 @@ gem 'active_model_serializers'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
