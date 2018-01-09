@@ -13,3 +13,30 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+<!-- Rendering inserted data from form-->
+<div id="results">
+  <div id="productTitle"></div>
+<p id="productDescription"></p>
+  <div id="productInventory"></div>
+  <div id="productPrice"></div>
+</div>
+<!-- Javascript code to take care of form date-->
+
+<script type="text/javascript" charset = "utf-8">
+$(function(){
+  $('form').submit(function(event){
+    event.preventDefault();
+    var values= $(this).serialize();
+    var productinfo = $.post('/products',values);
+    productinfo.done(function(data){
+      console.log(data)
+      $("#productTitle").text("Product Name:"+ data["name"]);
+      $("#productDescription").text("  Product Description:"+ data["description"]);
+      $("#productInventory").text("Inventory:"+ data["inventory"]);
+      $("#productPrice").text("Price:" + data.price);
+    });
+
+  });
+
+});
+</script>
