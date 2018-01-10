@@ -25,11 +25,11 @@
   $(function() {
     $('form').submit(function(event) {
       event.preventDefault();
-      var values = $(this).serialize();
-      var response = $.post('/products', values);
+      var params = $(this).serialize();
+      var postRequest = $.post('/products', params);
 
-      response.done(function(returnedJSONHash) {
-        var product = returnedJSONHash;
+      postRequest.done(function(renderedJSONHash) {
+        var product = renderedJSONHash;
         $("#productName").text(product["name"]);
         $("#productInventory").text(product["inventory"]);
         $("#productPrice").text(product["price"]);
