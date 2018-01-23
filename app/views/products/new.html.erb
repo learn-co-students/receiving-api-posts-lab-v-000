@@ -13,3 +13,27 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div id=productResult>
+  <h1 id="productName"></h1>
+  <p id="description"></p>
+  <p id="price"></p>
+  <p id="inventory"></p>
+</div>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(function (){
+    $('form').submit(function (event){
+      event.preventDefault();
+      var values = $(this).serialize();
+      var new_product = $.post('/products', values)
+      new_product.done(function(data) {
+        $('#productName').text(data["name"]);
+        $('#description').text(data["description"]);
+        $('#price').text(data["price"]);
+        $('#inventory').text(data["inventory"]);
+      });
+    });
+  });
+</script>
