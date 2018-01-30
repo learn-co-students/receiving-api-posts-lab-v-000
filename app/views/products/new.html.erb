@@ -22,18 +22,35 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-  $(function() {
-    $('form').submit(function(event) {
+  $(document).on("turbolinks:load", function() {
+    $('form').on('submit', function(event) {
       event.preventDefault();
+      event.stopPropagation();
       var values = $(this).serialize();
-      var product = $.post('/products', values);
-      product.done(function(data) {
+      var posting = $.post('/products', values);
+      posting.done(function(data) {
         var prod = data;
         $("#productName").text(prod["name"]);
         $("#productDescription").text(prod["description"]);
         $("#productPrice").text("Price: $ " + prod["price"]);
-        $("#productInventory").text(`Number in stock: ${prod["inventory"]}`);
+        $("#productInventory").text("Number in stock: " + prod["inventory"]);
       });
     });
   });
 </script>
+
+<!-- <script type="text/javascript" charset="utf-8">
+$(function () {
+  $('form').submit(function(event) {
+    event.preventDefault();
+    var values = $(this).serialize();
+    var posting = $.post('/products', values);
+    posting.done(function(data) {
+      var product = data;
+      $("#productName").text(product["name"]);
+      $("#productPrice").text("$" + product["price"]);
+      $("#productDescription").text(product["description"]);
+    });
+  });
+});
+</script> -->
