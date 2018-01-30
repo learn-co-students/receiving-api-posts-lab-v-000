@@ -1,5 +1,5 @@
 <h1>New Product</h1>
-<%= form_for @product do |f| %>
+<%= form_for(@product) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br />
@@ -31,7 +31,7 @@
         var prod = data;
         $("#productName").text(prod["name"]);
         $("#productDescription").text(prod["description"]);
-        $("#productPrice").text("Price: $" + prod["price"]);
+        $("#productPrice").text("Price: $ " + prod["price"]);
         $("#productInventory").text(`Number in stock: ${prod["inventory"]}`);
       });
     });
