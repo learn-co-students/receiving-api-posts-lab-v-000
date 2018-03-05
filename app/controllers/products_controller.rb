@@ -1,16 +1,15 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:inventory, :description, :show]
   def index
     @products = Product.all
   end
 
   def inventory
-    product = Product.find(params[:id])
-    render plain: product.inventory > 0 ? true : false
+    render plain: @product.inventory > 0 ? true : false
   end
 
   def description
-    product = Product.find(params[:id])
-    render plain: product.description
+    render plain: @product.description
   end
 
   def new
@@ -18,12 +17,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    redirect_to products_path
+    @product = Product.create(product_params)
+    render json: @product
   end
 
   def show
-    @product = Product.find(params[:id])
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @product }
@@ -31,6 +29,10 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
   def product_params
     params.require(:product).permit(:name, :description, :inventory, :price)
