@@ -1,15 +1,50 @@
 <h1>New Product</h1>
-<%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br />
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <br />
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <br />
-  <%= f.label :inventory %>
-  <%= f.text_field :inventory %>
-  <%= f.submit "submit" %>
+<%= form_for(@product) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><BR>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :inventory %>
+    <%= f.text_field :inventory %>
+  </div>
+  <div class="actions">
+    <%= f.submit "submit" %>
+  </div>
 <% end %>
+
+<div id="productResult">
+  <h2 id="productName"></h2>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+  <p id="productInventory"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('form').submit(function(event) {
+      event.preventDefault();
+      var values = $(this).serialize();
+      var prdt = $.post('/products', values);
+      prdt.done(function(data) {
+        var product = data;
+        $("#productName").text(product["name"]);
+        $("#productPrice").text("$" + product["price"]);
+        if (product["description"] != "") {
+          $("#productDescription").text(product["description"]);
+        };
+        if (product["inventory"]) {
+          $("#productInventory").text(product["inventory"]);
+        };
+      });
+    });
+  });
+</script>
