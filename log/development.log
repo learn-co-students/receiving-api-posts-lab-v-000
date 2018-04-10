@@ -1693,3 +1693,93 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-09 17:29:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (421.8ms)
+Completed 200 OK in 982ms (Views: 946.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-09 17:51:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (862.3ms)
+Completed 200 OK in 1258ms (Views: 1197.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-09 17:51:40 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHYp+q/E5FxKeeIVlorI8Au/0tbQ2trRy1TaWsiePLR8FGVklDe5g/2HAhoDuIF7xhc9aQLKl/bTUO7KoS+vCw==", "product"=>{"name"=>"asdf", "price"=>"asdf", "description"=>"asdf", "inventory"=>"asdf"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["description", "asdf"], ["inventory", 0], ["price", 0], ["created_at", "2018-04-10 00:51:40.218333"], ["updated_at", "2018-04-10 00:51:40.218333"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.09ms)
+Completed 201 Created in 42ms (Views: 27.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-09 17:51:48 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHYp+q/E5FxKeeIVlorI8Au/0tbQ2trRy1TaWsiePLR8FGVklDe5g/2HAhoDuIF7xhc9aQLKl/bTUO7KoS+vCw==", "product"=>{"name"=>"asdf", "price"=>"234", "description"=>"asdf", "inventory"=>"asdf"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asdf"], ["description", "asdf"], ["inventory", 0], ["price", 234], ["created_at", "2018-04-10 00:51:48.139655"], ["updated_at", "2018-04-10 00:51:48.139655"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 20ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-09 17:52:01 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHYp+q/E5FxKeeIVlorI8Au/0tbQ2trRy1TaWsiePLR8FGVklDe5g/2HAhoDuIF7xhc9aQLKl/bTUO7KoS+vCw==", "product"=>{"name"=>"asdf", "price"=>"234", "description"=>"asdf", "inventory"=>"2"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["description", "asdf"], ["inventory", 2], ["price", 234], ["created_at", "2018-04-10 00:52:01.528762"], ["updated_at", "2018-04-10 00:52:01.528762"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 14ms (Views: 0.4ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-09 17:52:52 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHYp+q/E5FxKeeIVlorI8Au/0tbQ2trRy1TaWsiePLR8FGVklDe5g/2HAhoDuIF7xhc9aQLKl/bTUO7KoS+vCw==", "product"=>{"name"=>"43543rt", "price"=>"234", "description"=>"asdf", "inventory"=>"2"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "43543rt"], ["description", "asdf"], ["inventory", 2], ["price", 234], ["created_at", "2018-04-10 00:52:52.592621"], ["updated_at", "2018-04-10 00:52:52.592621"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 14ms (Views: 0.5ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-09 17:52:59 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHYp+q/E5FxKeeIVlorI8Au/0tbQ2trRy1TaWsiePLR8FGVklDe5g/2HAhoDuIF7xhc9aQLKl/bTUO7KoS+vCw==", "product"=>{"name"=>"43543rt", "price"=>"234", "description"=>"asdfafsgfasdfsdfs fsdvrewsdf", "inventory"=>"2"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "43543rt"], ["description", "asdfafsgfasdfsdfs fsdvrewsdf"], ["inventory", 2], ["price", 234], ["created_at", "2018-04-10 00:52:59.800125"], ["updated_at", "2018-04-10 00:52:59.800125"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 19ms (Views: 0.7ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-09 17:53:25 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHYp+q/E5FxKeeIVlorI8Au/0tbQ2trRy1TaWsiePLR8FGVklDe5g/2HAhoDuIF7xhc9aQLKl/bTUO7KoS+vCw==", "product"=>{"name"=>"43543rt", "price"=>"234", "description"=>"asdfafsgfasdfsdfs fsdvrewsdf", "inventory"=>"2"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "43543rt"], ["description", "asdfafsgfasdfsdfs fsdvrewsdf"], ["inventory", 2], ["price", 234], ["created_at", "2018-04-10 00:53:25.068365"], ["updated_at", "2018-04-10 00:53:25.068365"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 21ms (Views: 0.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-09 17:54:05 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 103ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-09 17:54:13 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9XoWHEPM447LPlVC2cPbHStTkCn5BZ8P+yOxRD6nNGoVGFqCeD++UXzAtU1M8ZKW5vt/lisV0ijjJ4XUVxan1Q==", "product"=>{"name"=>"sadfsd", "price"=>"12", "description"=>"wefsdf dsfsaf", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sadfsd"], ["description", "wefsdf dsfsaf"], ["inventory", 1], ["price", 12], ["created_at", "2018-04-10 00:54:13.674280"], ["updated_at", "2018-04-10 00:54:13.674280"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 14ms (Views: 0.4ms | ActiveRecord: 2.8ms)
