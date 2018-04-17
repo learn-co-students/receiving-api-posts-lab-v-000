@@ -1693,3 +1693,45 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 72.252.198.128 at 2018-04-17 22:13:35 +0000
+Cannot render console from 72.252.198.128! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.3.3/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 14ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 72.252.198.128 at 2018-04-17 22:13:51 +0000
+Cannot render console from 72.252.198.128! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (264.5ms)
+Completed 200 OK in 514ms (Views: 504.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 72.252.198.128 at 2018-04-17 22:13:52 +0000
+Cannot render console from 72.252.198.128! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 72.252.198.128 at 2018-04-17 22:13:52 +0000
+Cannot render console from 72.252.198.128! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 72.252.198.128 at 2018-04-17 22:13:52 +0000
+Cannot render console from 72.252.198.128! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 72.252.198.128 at 2018-04-17 22:13:52 +0000
+Cannot render console from 72.252.198.128! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/products" for 72.252.198.128 at 2018-04-17 22:14:26 +0000
+Cannot render console from 72.252.198.128! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x0QQlxRP2mxtwTyHPEuF9cRMU6WrjcLfRD+/0L5vjsp05+YlQh5E9U/7LYDC+tWF//k+NbIPDHlsvh46KvVvHw==", "product"=>{"name"=>"Crocs", "price"=>"27", "description"=>"Really comfortable shoes!", "inventory"=>"500"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Crocs"], ["description", "Really comfortable shoes!"], ["inventory", 500], ["price", 27], ["created_at", "2018-04-17 22:14:26.643801"], ["updated_at", "2018-04-17 22:14:26.643801"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.09ms)
+Completed 201 Created in 21ms (Views: 11.0ms | ActiveRecord: 4.9ms)
