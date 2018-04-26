@@ -1693,3 +1693,171 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-04-25 18:41:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 352ms (Views: 336.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-25 18:41:23 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-25 18:41:23 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-25 18:41:23 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-25 18:41:23 -0400
+
+
+Started GET "/products/12.json" for 127.0.0.1 at 2018-04-25 18:41:27 -0400
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 12]]
+[active_model_serializers]   [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 12]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (46.89ms)
+Completed 200 OK in 91ms (Views: 78.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-25 18:41:30 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (484.4ms)
+Completed 200 OK in 511ms (Views: 510.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 38ms (Views: 29.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2018-04-26 00:38:31 -0400
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-26 00:39:00 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckT5Oqfzh648Nn3xF9LLqyoaUP+Duy2PoUYxmWdQ/qS/HudiTyiTKmiuobdeCciRNhhVCI049cb8hhthBPGHgg==", "product"=>{"name"=>"Snazzy Pants", "price"=>"20", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Snazzy Pants"], ["description", ""], ["price", 20], ["created_at", "2018-04-26 04:39:00.773381"], ["updated_at", "2018-04-26 04:39:00.773381"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (19.55ms)
+Completed 201 Created in 32ms (Views: 22.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-26 00:40:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (418.9ms)
+Completed 200 OK in 702ms (Views: 681.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2018-04-26 00:40:57 -0400
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-26 00:41:32 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8AfIG318tgj9epXJJ56z4tNALwQWAqFDfba41TtRkcM9XdZDlaeijKniSY9uRbDYz0Iq8xiBeQogdpItWPDo5Q==", "product"=>{"name"=>"Snazzy Pants", "price"=>"20", "description"=>"They fit perfectly and don't require alterations and match all your stuff and are flattering.", "inventory"=>"100"}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Snazzy Pants"], ["description", "They fit perfectly and don't require alterations and match all your stuff and are flattering."], ["inventory", 100], ["price", 20], ["created_at", "2018-04-26 04:41:32.278696"], ["updated_at", "2018-04-26 04:41:32.278696"]]
+  [1m[35m (4.1ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (69.87ms)
+Completed 201 Created in 115ms (Views: 101.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2018-04-26 00:41:47 -0400
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-26 00:41:48 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFt3akOUypWoluHKtgyn+0wTrolzUdFurPS0jgU7Sfb1AWkyq0/eEfwOPYz/16TBUBGrfn3SCSfxNJ52Zpow0A==", "product"=>{"name"=>"Snazzy Pants", "price"=>"20", "description"=>"They fit perfectly and don't require alterations and match all your stuff and are flattering.", "inventory"=>"100"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Snazzy Pants"], ["description", "They fit perfectly and don't require alterations and match all your stuff and are flattering."], ["inventory", 100], ["price", 20], ["created_at", "2018-04-26 04:41:48.578135"], ["updated_at", "2018-04-26 04:41:48.578135"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.72ms)
+Completed 201 Created in 12ms (Views: 2.2ms | ActiveRecord: 5.1ms)
