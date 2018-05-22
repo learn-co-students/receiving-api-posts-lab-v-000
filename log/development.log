@@ -1693,3 +1693,48 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2018-05-22 15:50:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 429ms (Views: 408.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/new" for ::1 at 2018-05-22 15:50:30 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (354.8ms)
+Completed 200 OK in 373ms (Views: 372.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2018-05-22 15:50:41 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l1rNv10ItG0doKLBXUJepq+ls96XjqINteRseT8oqeoXPDMaMqdXh5ZECzP4bi9N9olRUu4D0ZpLyJyWn+q57g==", "product"=>{"name"=>"soemthing", "price"=>"2", "description"=>"adfadsf ", "inventory"=>"1"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "soemthing"], ["description", "adfadsf "], ["inventory", 1], ["price", 2], ["created_at", "2018-05-22 19:50:41.055619"], ["updated_at", "2018-05-22 19:50:41.055619"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/products" for ::1 at 2018-05-22 15:50:41 -0400
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2018-05-22 15:53:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 328ms (Views: 308.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for ::1 at 2018-05-22 15:53:22 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (430.1ms)
+Completed 200 OK in 456ms (Views: 455.1ms | ActiveRecord: 0.0ms)
