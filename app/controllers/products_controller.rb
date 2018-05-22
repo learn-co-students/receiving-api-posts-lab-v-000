@@ -14,11 +14,11 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product = Product.new 
   end
 
   def create
-    Product.create(product_params)
+    @product = Product.create(product_params)
     render json: @product, status: 201
   end
 
