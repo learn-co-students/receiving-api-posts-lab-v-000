@@ -36,7 +36,9 @@ submit event, and then block the form from doing an HTML submit as it normally w
       posting.done(function(data) {
         var product = data;
         $("#productName").text(product["name"]);
-        $("#productInventory").text("Available: " + product["inventory"]);
+        if(product["inventory"] === 0 || product["inventory"] === null){
+            $("#productInventory").text("Available: 0");
+          } else $("#productInventory").text("Available: " + product["inventory"]);
         $("#productPrice").text("Price: " + product["price"].toFixed(2));
         $("#productDescription").text(product["description"]);
       });
