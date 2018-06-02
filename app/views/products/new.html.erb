@@ -1,15 +1,47 @@
 <h1>New Product</h1>
 <%= form_for @product do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br />
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <br />
+  <%= f.text_field :name %><br><br>
   <%= f.label :description %>
-  <%= f.text_area :description %>
-  <br />
+  <%= f.text_area :description %><br><br>
+  <%= f.label :price %>
+  <%= f.text_field :price %><br><br>
   <%= f.label :inventory %>
-  <%= f.text_field :inventory %>
+  <%= f.text_field :inventory %><br><br>
   <%= f.submit "submit" %>
 <% end %>
+
+<!-- place holder for the parsed JSON data -->
+<div id="productResult">
+  <h2 id="productName"></h2>
+  <p id="productInventory"></p>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+</div>
+<!-- prevent the default form submit action by hooking up an event handler to the form's 
+submit event, and then block the form from doing an HTML submit as it normally would.
+-->
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('form').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+      //take the form data and serializes it 
+      var values = $(this).serialize(); 
+      //use jQuery product() to retrieve the data by passing it the URL and the values
+      //The jQuery product() method returns a jqXHR object, which we're storing in our producting variable. These 
+      //jqXHR objects implement the Promise interface, which is used for deferred or asynchronous operations
+      var posting = $.post('/products', values);
+      //parse the JSON data and add it to the DOM
+      posting.done(function(data) {
+        var product = data;
+        $("#productName").text(product["name"]);
+        if(product["inventory"] === 0 || product["inventory"] === null){
+            $("#productInventory").text("Available: 0");
+          } else $("#productInventory").text("Available: " + product["inventory"]);
+        $("#productPrice").text("Price: " + product["price"].toFixed(2));
+        $("#productDescription").text(product["description"]);
+      });
+    });
+  });
+</script>

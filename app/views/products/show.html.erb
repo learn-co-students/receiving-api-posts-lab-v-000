@@ -1,23 +1,33 @@
 <a href="#" class="js-next" data-id="<%=@product.id%>">Next Product</a>
-<h1 class="productName"><%= @product.name %></h1>
-<p class="productInventory"><%= @product.inventory %></p>
-<p class="productPrice"><%= @product.price %></p>
+<h1 class="productName"><%= @product.id %>: <%= @product.name %></h1>
+<% if @product.inventory == nil %>
+      <p class="productInventory">Available: 0</p>
+   <%else%> <p class="productInventory">Available: <%= @product.inventory %></p>
+<%end%>
+
+<p class="productPrice">Price: <%= number_to_currency(@product.price) %></p>
 <p class="productDescription"><%= @product.description %></p>
 
 <script type="text/javascript" charset="utf-8">
 $(function () {
+  $(document).ajaxError(function(event, jqxhr, settings, thrownError){
+    if (thrownError == "Not Found") {
+        alert("There are no more products to display!")
+    } else alert(thrownError);
+  });
   $(".js-next").on("click", function() {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/products/" + nextId + ".json", function(data) {
       var product = data;
       $(".productName").text(product["name"]);
-      $(".productPrice").text(product["price"]);
+      $(".productPrice").text("Price: $" + product["price"].toFixed(2));
       $(".productDescription").text(product["description"]);
-      $(".productInventory").text(product["inventory"]);
+      if (product["inventory"] == null) {
+          $(".productInventory").text("Available: 0");
+      } else $(".productInventory").text("Available: " + product["inventory"]);
       // re-set the id to current on the link
       $(".js-next").attr("data-id", product["id"]);
     });
   });
 });
 </script>
-
