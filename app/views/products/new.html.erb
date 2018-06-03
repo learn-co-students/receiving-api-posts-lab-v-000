@@ -1,15 +1,49 @@
 <h1>New Product</h1>
-<%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br />
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <br />
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <br />
-  <%= f.label :inventory %>
-  <%= f.text_field :inventory %>
-  <%= f.submit "submit" %>
-<% end %>
+<div class="forms">
+  <%= form_for @product do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br />
+    <%= f.label :price %>
+    <br>
+    <%= f.text_field :price %>
+    <br />
+    <%= f.label :description %>
+    <br>
+    <%= f.text_area :description %>
+    <br />
+    <%= f.label :inventory %>
+    <br>
+    <%= f.text_field :inventory %>
+    <br>
+    <%= f.submit "submit" %>
+  <% end %>
+</div>
+
+<div id="productDisplay">
+  <p id="name"></p>
+  <p id="price"></p>
+  <p id="description"></p>
+  <p id="inventory"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('form').submit(function(e) {
+      e.preventDefault();
+      const values = $(this).serialize();
+      const newProduct = $.post("/products", values);
+      newProduct.done(function(data) {
+        $("#name").text(data.name);
+        $("#price").text(data.price);
+        $("#description").text(data.description);
+        $("inventory").text(availability(data.inventory));
+      });
+    });
+  });
+
+  function availability(inventory) {
+    return inventory > 0 ? "Available" : "Sold Out";
+  }
+</script>
