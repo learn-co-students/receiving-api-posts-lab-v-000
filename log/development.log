@@ -1693,3 +1693,253 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+Started GET "/products" for 127.0.0.1 at 2018-06-25 09:32:43 -0500
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/activerecord-5.0.1/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (18.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2018-06-25 09:32:44 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+Completed 200 OK in 848ms (Views: 815.0ms | ActiveRecord: 1.7ms)
+
+
+  Rendered products/new.html.erb within layouts/application (524.5ms)
+Completed 200 OK in 581ms (Views: 573.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:32:47 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HEFSMXldB3pAni3reffsvbJuBbuHis4KCbL24lJcl6RS1fd1FwiNm72/BbjMqusuuNjEgvAHU7OsvwqhgPAYyQ==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:32:48 UTC], ["updated_at", 2018-06-25 14:32:48 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (26.5ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (99.3ms)
+Completed 201 Created in 247ms (Views: 188.2ms | ActiveRecord: 32.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:33:50 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HEFSMXldB3pAni3reffsvbJuBbuHis4KCbL24lJcl6RS1fd1FwiNm72/BbjMqusuuNjEgvAHU7OsvwqhgPAYyQ==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:33:50 UTC], ["updated_at", 2018-06-25 14:33:50 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (26.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 181ms (ActiveRecord: 30.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-06-25 09:33:54 -0500
+Processing by ProductsController#new as HTML
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (29.44ms)
+Completed 201 Created in 34ms (Views: 33.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-06-25 09:34:01 -0500
+Processing by ProductsController#new as HTML
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.12ms)
+Completed 201 Created in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-06-25 09:34:24 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 54ms (Views: 42.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:34:27 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zZE+zhTL4CM9Q76Aat5WZdenGNk4UdFM9crpndxIkXuDBZuKep5qwsBiltPfg1H23RHZ4E/cTPVQxxXeDuQeFg==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:34:27 UTC], ["updated_at", 2018-06-25 14:34:27 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (25.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 26.8ms)
+
+
+  
+NameError (undefined local variable or method `new_products_path' for #<ProductsController:0x00007f317dd4a1b0>
+Did you mean?  new_product_path
+               new_product_url):
+  
+app/controllers/products_controller.rb:22:in `create'
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (122.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home__yler___rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___837955446714778166_69925162864700 at /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (125.9ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (217.8ms)
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:34:37 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zZE+zhTL4CM9Q76Aat5WZdenGNk4UdFM9crpndxIkXuDBZuKep5qwsBiltPfg1H23RHZ4E/cTPVQxxXeDuQeFg==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:34:37 UTC], ["updated_at", 2018-06-25 14:34:37 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (24.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/new
+Completed 302 Found in 46ms (ActiveRecord: 28.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-06-25 09:34:37 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:38:11 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ntXkD60BR1BuTaPdnqDtcBumK/xJd6WtTFv+uN8ahIvQQUFLw1TNsZNsi44r/erjERDqxT76OBTpVgL7DbYL5g==", "product"=>{"name"=>"t", "price"=>"qt", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:38:11 UTC], ["updated_at", 2018-06-25 14:38:11 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (27.1ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 201 Created in 72ms (Views: 23.7ms | ActiveRecord: 32.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:40:05 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ntXkD60BR1BuTaPdnqDtcBumK/xJd6WtTFv+uN8ahIvQQUFLw1TNsZNsi44r/erjERDqxT76OBTpVgL7DbYL5g==", "product"=>{"name"=>"t", "price"=>"qt", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:40:05 UTC], ["updated_at", 2018-06-25 14:40:05 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (25.9ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.18ms)
+Completed 201 Created in 64ms (Views: 16.3ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/product/new" for 127.0.0.1 at 2018-06-25 09:40:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/product/new"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/home/TylerP/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/home/TylerP/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/home/TylerP/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (4.8ms)
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (139.1ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home__yler___rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___837955446714778166_70368179809120 at /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (106.5ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/TylerP/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (209.3ms)
+Started GET "/products/new" for 127.0.0.1 at 2018-06-25 09:40:23 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 56ms (Views: 41.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:40:27 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8yidUfRlV5whhcGM168NJuw/bOt8tQxvwusfAOptfim9vDgVmjDdfdyk6d9i8gq15omt0gs4kdZn5uNDOMHxRA==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:40:27 UTC], ["updated_at", 2018-06-25 14:40:27 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (24.7ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 63ms (Views: 12.2ms | ActiveRecord: 26.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:41:20 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8yidUfRlV5whhcGM168NJuw/bOt8tQxvwusfAOptfim9vDgVmjDdfdyk6d9i8gq15omt0gs4kdZn5uNDOMHxRA==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:41:20 UTC], ["updated_at", 2018-06-25 14:41:20 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (29.3ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.21ms)
+Completed 201 Created in 47ms (Views: 2.0ms | ActiveRecord: 32.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:41:24 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8yidUfRlV5whhcGM168NJuw/bOt8tQxvwusfAOptfim9vDgVmjDdfdyk6d9i8gq15omt0gs4kdZn5uNDOMHxRA==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:41:24 UTC], ["updated_at", 2018-06-25 14:41:24 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (36.4ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 201 Created in 76ms (Views: 1.5ms | ActiveRecord: 39.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:42:58 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8yidUfRlV5whhcGM168NJuw/bOt8tQxvwusfAOptfim9vDgVmjDdfdyk6d9i8gq15omt0gs4kdZn5uNDOMHxRA==", "product"=>{"name"=>"t", "price"=>"t", "description"=>"t", "inventory"=>"t"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "t"], ["price", 0], ["created_at", 2018-06-25 14:42:58 UTC], ["updated_at", 2018-06-25 14:42:58 UTC], ["inventory", 0], ["description", "t"]]
+  [1m[35m (24.7ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 201 Created in 42ms (Views: 2.3ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-06-25 09:43:02 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-06-25 09:43:10 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5HUYTtDG0t0p6iSzA8tMoANHwjYRGLyokZO4nCv+uf+q4b0KvpNYPNTLDOC2lkszCfEDD2aVIRE0nkTf+VI2kg==", "product"=>{"name"=>"dsg", "price"=>"dsg", "description"=>"sdgf", "inventory"=>"sdf"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "dsg"], ["price", 0], ["created_at", 2018-06-25 14:43:10 UTC], ["updated_at", 2018-06-25 14:43:10 UTC], ["inventory", 0], ["description", "sdgf"]]
+  [1m[35m (23.8ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.11ms)
+Completed 201 Created in 43ms (Views: 5.5ms | ActiveRecord: 25.3ms)
+
+
