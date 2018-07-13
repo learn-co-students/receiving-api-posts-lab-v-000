@@ -31,6 +31,8 @@ class ProductsController < ApplicationController
   end
 
   private
+  def set_games
+  end
 
   def product_params
     params.require(:product).permit(:name, :description, :inventory, :price)
