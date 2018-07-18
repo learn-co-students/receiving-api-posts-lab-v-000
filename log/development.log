@@ -1693,3 +1693,148 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for ::1 at 2018-07-18 12:00:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (627.4ms)
+Completed 200 OK in 1503ms (Views: 1480.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2018-07-18 12:07:44 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    14:   <%= f.submit "submit" %>
+    15: <% end %>
+    16: 
+    17: <%= form_for(@post) do |f| %>
+    18:   <div class="field">
+    19:     <%= f.label :title %><br>
+    20:     <%= f.text_field :title %>
+  app/views/products/new.html.erb:17:in `_app_views_products_new_html_erb___2654274249733599128_70250994541920'
+
+
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (108.3ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (91.9ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/arielfeingold/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (202.5ms)
+
+
+Started GET "/products/new" for ::1 at 2018-07-18 12:08:06 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:08:42 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2d998NbhiKESOAEmLZxScLLBs37pDiOjto/0TB2eMV61xeUuzU2DuV8wCdxkU4MFN/iqdNz2pprwfGkjWZARCg==", "product"=>{"name"=>"aergasgf", "price"=>"25", "description"=>"asdfasdf", "inventory"=>"12"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "aergasgf"], ["description", "asdfasdf"], ["inventory", 12], ["price", 25], ["created_at", "2018-07-18 16:08:42.486897"], ["updated_at", "2018-07-18 16:08:42.486897"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.09ms)
+Completed 201 Created in 22ms (Views: 12.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:08:44 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2d998NbhiKESOAEmLZxScLLBs37pDiOjto/0TB2eMV61xeUuzU2DuV8wCdxkU4MFN/iqdNz2pprwfGkjWZARCg==", "product"=>{"name"=>"aergasgf", "price"=>"25", "description"=>"asdfasdf", "inventory"=>"12"}}
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "aergasgf"], ["description", "asdfasdf"], ["inventory", 12], ["price", 25], ["created_at", "2018-07-18 16:08:44.941323"], ["updated_at", "2018-07-18 16:08:44.941323"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 8ms (Views: 0.5ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:08:45 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2d998NbhiKESOAEmLZxScLLBs37pDiOjto/0TB2eMV61xeUuzU2DuV8wCdxkU4MFN/iqdNz2pprwfGkjWZARCg==", "product"=>{"name"=>"aergasgf", "price"=>"25", "description"=>"asdfasdf", "inventory"=>"12"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "aergasgf"], ["description", "asdfasdf"], ["inventory", 12], ["price", 25], ["created_at", "2018-07-18 16:08:45.209916"], ["updated_at", "2018-07-18 16:08:45.209916"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 7ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:08:45 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2d998NbhiKESOAEmLZxScLLBs37pDiOjto/0TB2eMV61xeUuzU2DuV8wCdxkU4MFN/iqdNz2pprwfGkjWZARCg==", "product"=>{"name"=>"aergasgf", "price"=>"25", "description"=>"asdfasdf", "inventory"=>"12"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "aergasgf"], ["description", "asdfasdf"], ["inventory", 12], ["price", 25], ["created_at", "2018-07-18 16:08:45.402840"], ["updated_at", "2018-07-18 16:08:45.402840"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 6ms (Views: 0.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:08:45 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2d998NbhiKESOAEmLZxScLLBs37pDiOjto/0TB2eMV61xeUuzU2DuV8wCdxkU4MFN/iqdNz2pprwfGkjWZARCg==", "product"=>{"name"=>"aergasgf", "price"=>"25", "description"=>"asdfasdf", "inventory"=>"12"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "aergasgf"], ["description", "asdfasdf"], ["inventory", 12], ["price", 25], ["created_at", "2018-07-18 16:08:45.591126"], ["updated_at", "2018-07-18 16:08:45.591126"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 6ms (Views: 0.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/products/new" for ::1 at 2018-07-18 12:09:04 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:09:12 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XeXu1cvaMdLhFjsuzxqJQy1piqWaslkRrqUuJHV8aZwx/3YL0HY6yqweM9SG1Vg2qFCTr69K3CjoVrNLMXJJyA==", "product"=>{"name"=>"asfasF", "price"=>"12", "description"=>"SDFasfe", "inventory"=>"12"}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asfasF"], ["description", "SDFasfe"], ["inventory", 12], ["price", 12], ["created_at", "2018-07-18 16:09:12.034717"], ["updated_at", "2018-07-18 16:09:12.034717"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 201 Created in 5ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:09:58 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XeXu1cvaMdLhFjsuzxqJQy1piqWaslkRrqUuJHV8aZwx/3YL0HY6yqweM9SG1Vg2qFCTr69K3CjoVrNLMXJJyA==", "product"=>{"name"=>"asfasF", "price"=>"12", "description"=>"SDFasfe", "inventory"=>"12"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asfasF"], ["description", "SDFasfe"], ["inventory", 12], ["price", 12], ["created_at", "2018-07-18 16:09:58.455624"], ["updated_at", "2018-07-18 16:09:58.455624"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 6ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:10:11 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XeXu1cvaMdLhFjsuzxqJQy1piqWaslkRrqUuJHV8aZwx/3YL0HY6yqweM9SG1Vg2qFCTr69K3CjoVrNLMXJJyA==", "product"=>{"name"=>"asfasF", "price"=>"12", "description"=>"SDFasfe", "inventory"=>"12"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asfasF"], ["description", "SDFasfe"], ["inventory", 12], ["price", 12], ["created_at", "2018-07-18 16:10:11.589656"], ["updated_at", "2018-07-18 16:10:11.589656"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 10ms (Views: 0.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products/new" for ::1 at 2018-07-18 12:10:24 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2018-07-18 12:10:31 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KkRXE+mcN4x7k1ZwRaDyUFIUseDY3x3XVnjfNK6Tb6tGXs/N8jA8lDabXooMbyMl1y2o6u0nmO4Qi0Jb6p1P/w==", "product"=>{"name"=>"sef", "price"=>"12", "description"=>"asdgasg", "inventory"=>"132"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sef"], ["description", "asdgasg"], ["inventory", 132], ["price", 12], ["created_at", "2018-07-18 16:10:31.269223"], ["updated_at", "2018-07-18 16:10:31.269223"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 6ms (Views: 0.6ms | ActiveRecord: 1.5ms)
