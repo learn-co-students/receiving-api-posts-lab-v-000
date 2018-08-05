@@ -13,3 +13,35 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div id="productResult">
+  <h2 id="productName"></h2>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+  <p id="productInventory"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('form').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+      var values = $(this).serialize();
+      //use jQuery post w/ URL and values 
+      var creation = $.post('/products', values);
+      //use posting object to specify what happens when AJAX request is done
+      creation.done(function(data) {
+        var product = data;
+        console.log(product)
+        $("#productName").text(product["name"]);
+        $("#productPrice").text("$" + product["price"]);
+        if (product["description"] != "") {
+          $("#productDescription").text(product["description"]);
+        };
+        if (product["inventory"]) {
+          $("#productInventory").text(product["inventory"]); 
+        };
+      });
+    });
+  });
+</script>
