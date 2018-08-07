@@ -18,8 +18,10 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    redirect_to products_path
+    product = Product.create(product_params)
+    # redirect_to products_path
+    # raise params.inspect
+    render json: product, status: 201
   end
 
   def show
