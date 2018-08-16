@@ -16,8 +16,8 @@
 
 <div id="newprod"></div>
 
-<script type="text/javascript" charset="utf-8">
-  $(function () {
+<script type="text/javascript">
+  $(function() {
     $('form').submit(function(event) {
       event.preventDefault();
       var values = $(this).serialize();
@@ -25,7 +25,7 @@
       var posting = $.post('/products', values);
       posting.done(function(data) {
         console.log(data)
-        $("#newprod").html(`<p>${data["name"]}</p><p>${data['description']}</p><p>${data["price"]}</p><p>${data['inventory']}`);
+        $("#newprod").html('<p>' + data["name"] + '</p>' + '<p>' + data["description"] + '</p>' + '<p>' + data["price"] + '</p>' + '<p>' + data["inventory"] + '</p>')
       });
     });
   });
