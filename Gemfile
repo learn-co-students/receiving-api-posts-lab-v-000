@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'pry'
 gem 'pry-nav'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -33,14 +33,17 @@ gem 'active_model_serializers'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rails-controller-testing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'capybara'
   gem 'faker'
   gem 'shoulda'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'poltergeist', '~> 1.14.0'
 end
 
