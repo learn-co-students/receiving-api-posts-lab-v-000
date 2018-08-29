@@ -1,3 +1,45 @@
+<!-- MINE <h1>New Product</h1>
+<%= form_for @product do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br />
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <br />
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br />
+  <%= f.label :inventory %>
+  <%= f.text_field :inventory %>
+  <%= f.submit "submit" %>
+<% end %>
+
+<div id="productResult">
+  <h2 id="productName"></h2>
+  <span id="productPrice"></span>
+  <p id="productDescription"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('form').submit(function(event){
+
+      event.preventDefault();
+      let values = $(this).serialize();
+      debugger
+      let postProduct = $.post('/products', values);
+
+      postProduct.done(function(data) {
+        let product = data;
+        debugger
+        $("#productName").text(product['name'])
+        $("#productDescription").text(product['description'])
+        $("#productPrice").text("$" + product['price'])
+      })
+    })
+  })
+</script> -->
+
 <h1>New Product</h1>
 <%= form_for @product do |f| %>
   <%= f.label :name %>
@@ -13,3 +55,25 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div id="productResult">
+  <h2 id="productName"></h2>
+  <span id="productPrice"></span>
+  <p id="productDescription"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $('form').submit(function(event) {
+    event.preventDefault();
+    var values = $(this).serialize();
+    var posting = $.post('/products', values);
+    posting.done(function(data) {
+      var product = data;
+      $("#productName").text(product["name"]);
+      $("#productPrice").text("$" + product["price"]);
+      $("#productDescription").text(product["description"]);
+    });
+  });
+});
+</script>
