@@ -1693,3 +1693,188 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 05:05:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/tmax818/.rvm/gems/ruby-2.3.7/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 22ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-09-06 05:05:49 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 205ms (Views: 197.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2018-09-06 05:05:49 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2018-09-06 05:05:49 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2018-09-06 05:05:49 -0700
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-09-06 05:05:52 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (202.6ms)
+Completed 200 OK in 216ms (Views: 214.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 05:29:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/tmax818/.rvm/gems/ruby-2.3.7/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (0.9ms)
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-09-06 05:29:16 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 175ms (Views: 166.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-09-06 05:29:30 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (192.9ms)
+Completed 200 OK in 210ms (Views: 208.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:29:45 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:29:45.354295"], ["updated_at", "2018-09-06 12:29:45.354295"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 29ms (Views: 11.2ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:29:49 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:29:49.249856"], ["updated_at", "2018-09-06 12:29:49.249856"]]
+  [1m[35m (13.5ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 201 Created in 23ms (Views: 0.6ms | ActiveRecord: 14.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:29:49 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:29:49.775449"], ["updated_at", "2018-09-06 12:29:49.775449"]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 20ms (Views: 0.5ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:29:49 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:29:49.950088"], ["updated_at", "2018-09-06 12:29:49.950088"]]
+  [1m[35m (12.6ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.13ms)
+Completed 201 Created in 20ms (Views: 1.2ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:29:50 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:29:50.138297"], ["updated_at", "2018-09-06 12:29:50.138297"]]
+  [1m[36m (12.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.19ms)
+Completed 201 Created in 21ms (Views: 1.4ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:29:50 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:29:50.340394"], ["updated_at", "2018-09-06 12:29:50.340394"]]
+  [1m[35m (13.1ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.19ms)
+Completed 201 Created in 23ms (Views: 1.4ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:29:50 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:29:50.502246"], ["updated_at", "2018-09-06 12:29:50.502246"]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.2ms)
+Completed 201 Created in 22ms (Views: 1.6ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:33:31 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "test"], ["description", ""], ["created_at", "2018-09-06 12:33:31.857826"], ["updated_at", "2018-09-06 12:33:31.857826"]]
+  [1m[35m (10.8ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 201 Created in 16ms (Views: 0.6ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:33:47 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"3", "description"=>"", "inventory"=>""}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "test"], ["description", ""], ["price", 3], ["created_at", "2018-09-06 12:33:47.223854"], ["updated_at", "2018-09-06 12:33:47.223854"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 19ms (Views: 0.9ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:34:02 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"3", "description"=>"tests", "inventory"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "test"], ["description", "tests"], ["price", 3], ["created_at", "2018-09-06 12:34:02.063555"], ["updated_at", "2018-09-06 12:34:02.063555"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.18ms)
+Completed 201 Created in 16ms (Views: 1.1ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-06 05:34:12 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NatrAyivvr/HHFxrB1A56u8giuDmJJchtKvkVaUcyZj4G1ntXn1WYoW/gDL4WopdG+kCL7yEPmAm6sHLebl8NQ==", "product"=>{"name"=>"test", "price"=>"3", "description"=>"tests", "inventory"=>"3"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "test"], ["description", "tests"], ["inventory", 3], ["price", 3], ["created_at", "2018-09-06 12:34:12.227582"], ["updated_at", "2018-09-06 12:34:12.227582"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.19ms)
+Completed 201 Created in 19ms (Views: 1.4ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-06 05:41:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/tmax818/.rvm/gems/ruby-2.3.7/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-09-06 05:41:25 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 179ms (Views: 172.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-09-06 05:41:28 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (195.5ms)
+Completed 200 OK in 210ms (Views: 208.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-09-06 05:41:42 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
