@@ -1,15 +1,51 @@
 <h1>New Product</h1>
-<%= form_for @product do |f| %>
+<%= form_for (@product) do |f| %>
+<div class="field">
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <br />
+</div>
+<div class="field">
   <%= f.label :price %>
   <%= f.text_field :price %>
-  <br />
+</div>
+<div class="field">
   <%= f.label :description %>
   <%= f.text_area :description %>
-  <br />
+</div>
+<div class="field">
   <%= f.label :inventory %>
   <%= f.text_field :inventory %>
+</div>
+<div class="actions">
   <%= f.submit "submit" %>
+</div>
 <% end %>
+
+<div id="productResult">
+  <h4 id="productName"></h4>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('form').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+      var values = $(this).serialize();
+      // new:58 utf8=%E2%9C%93&authenticity_token=XjOAbqk9FC%
+      // 2FUrD4l8kV2VmMkPUaNXBlGcMpXpZBPQvLJSWJr1tV05iSYPlVflyS1clcIL
+      // uIrhwki94VR6SozPA%3D%3D&
+      // product%5Bname%5D=giraffe&product%5Bprice%5D=1&
+      // product%5Bdescription%5D=1&product%5Binventory%5D=1
+      var posting = $.post('/products', values);
+      console.log(posting)
+      posting.done(function(data) {
+          var product = data;
+          $("#productName").text(product["name"])
+          $("#productPrice").text("$" + product["price"])
+          $("#productDescription").text(product["description"])
+      });
+    });
+  });
+</script>
