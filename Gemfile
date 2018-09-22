@@ -27,7 +27,7 @@ gem 'active_model_serializers'
 gem 'activemodel'
 gem 'actionpack'
 gem 'railties'
-# gem 'actionview', '>= 5.2.1'
+# gem 'actionview', '>= 5.2.1' 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
