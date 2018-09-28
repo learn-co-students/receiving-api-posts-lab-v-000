@@ -1693,3 +1693,97 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-09-28 05:48:23 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1127.2ms)
+Completed 200 OK in 2388ms (Views: 2362.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-09-28 05:48:26 -0700
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-09-28 05:48:26 -0700
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-09-28 05:48:26 -0700
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-09-28 05:48:26 -0700
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-28 05:48:42 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9mLudUPkXAotmbNQ+STvMbCvU2EfzPYzbPtu92i9Q/ULisNaCTYqwVS5IReBIo+J4L4dhyV0bsQprSSCeRbIXw==", "product"=>{"name"=>"WD hard drive", "price"=>"100", "description"=>"best hard drive available", "inventory"=>"50"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WD hard drive"], ["description", "best hard drive available"], ["inventory", 50], ["price", 100], ["created_at", "2018-09-28 12:48:42.595418"], ["updated_at", "2018-09-28 12:48:42.595418"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (59.81ms)
+Completed 201 Created in 131ms (Views: 112.1ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-28 06:02:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9mLudUPkXAotmbNQ+STvMbCvU2EfzPYzbPtu92i9Q/ULisNaCTYqwVS5IReBIo+J4L4dhyV0bsQprSSCeRbIXw==", "product"=>{"name"=>"WD hard drive", "price"=>"100", "description"=>"best hard drive available", "inventory"=>"50"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WD hard drive"], ["description", "best hard drive available"], ["inventory", 50], ["price", 100], ["created_at", "2018-09-28 13:02:50.771154"], ["updated_at", "2018-09-28 13:02:50.771154"]]
+  [1m[35m (18.2ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (42.07ms)
+Completed 201 Created in 135ms (Views: 82.5ms | ActiveRecord: 22.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-28 06:02:55 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9mLudUPkXAotmbNQ+STvMbCvU2EfzPYzbPtu92i9Q/ULisNaCTYqwVS5IReBIo+J4L4dhyV0bsQprSSCeRbIXw==", "product"=>{"name"=>"WD hard drive", "price"=>"100", "description"=>"best hard drive available", "inventory"=>"50"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WD hard drive"], ["description", "best hard drive available"], ["inventory", 50], ["price", 100], ["created_at", "2018-09-28 13:02:55.138743"], ["updated_at", "2018-09-28 13:02:55.138743"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (4.5ms)
+Completed 201 Created in 27ms (Views: 7.7ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-09-28 06:02:58 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (813.9ms)
+Completed 200 OK in 1224ms (Views: 1223.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-28 06:03:06 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KO+g+1Uu0aZBnHxI+iaoPMikWpYjIMMrmE7bnO3i0LrVB43UH/ynbTi87g+CIMiEmLUUcBmYW9zdGJHp/ElbEA==", "product"=>{"name"=>"wtf", "price"=>"5000", "description"=>"yen", "inventory"=>"5000"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.8ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "wtf"], ["description", "yen"], ["inventory", 5000], ["price", 5000], ["created_at", "2018-09-28 13:03:06.565277"], ["updated_at", "2018-09-28 13:03:06.565277"]]
+  [1m[35m (7.4ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 201 Created in 22ms (Views: 1.8ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-09-28 06:06:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (837.0ms)
+Completed 200 OK in 1223ms (Views: 1193.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-09-28 06:06:36 -0700
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-09-28 06:06:36 -0700
+
+
+Started POST "/products" for 127.0.0.1 at 2018-09-28 06:06:41 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hR0pbp3WuoroLDMqm9LJFKfdvIBTU5tEcsxb2Ul0qtF49QRB1wTMQZEMoW3j1Kms98zyZmnrA7M3mhGsWN8hew==", "product"=>{"name"=>"fail", "price"=>"200", "description"=>"fail", "inventory"=>"200"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "fail"], ["description", "fail"], ["inventory", 200], ["price", 200], ["created_at", "2018-09-28 13:06:41.483407"], ["updated_at", "2018-09-28 13:06:41.483407"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 26]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (35.1ms)
+Completed 201 Created in 90ms (Views: 70.7ms | ActiveRecord: 12.0ms)
