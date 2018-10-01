@@ -1,8 +1,8 @@
 <h1>Products</h1>
 <% @products.each do |product| %>
-  <h3><%= product.name %></h3>
+  <h3 id="productNameTitle"> <%= product.name %></h3>
   <div id="product-<%= product.id %>"><%= truncate(product.description) %></div>
-  <button class="js-more" data-id="<%= product.id %>">More Info</button>
+  <button class="js-more button_<%= product.id %>" data-id="<%= product.id %>">More Info</button>
   <ul id="product-<%= product.id %>-orders">
   </ul>
 <% end %>
@@ -25,6 +25,7 @@ $(function() {
         orderList += '<li class="js-order" data-id="' + order["id"] + '">' + order["id"] + ' - ' + order["created_at"] + '</li>';
       });
       $("#product-" + id + "-orders").html(orderList);
+      $(".button_" + id).hide()
     });
   });
 });
