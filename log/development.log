@@ -1693,3 +1693,105 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2018-10-09 09:04:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/andyemily/.rvm/gems/ruby-2.3.3/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2018-10-09 09:04:38 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (531.3ms)
+Completed 200 OK in 1126ms (Views: 1114.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-10-09 09:04:39 -0400
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-10-09 09:04:39 -0400
+
+
+Started POST "/products" for ::1 at 2018-10-09 09:04:55 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XwTx5CnhKK9jwaXkxIFkAGLi57sNfFjLU8YiQy0RMdISpArML4q1qrfRTqSFnJHWzik8fn0UpY+8Diu4yGpAlg==", "product"=>{"name"=>"hat", "price"=>"1", "description"=>"nice hat", "inventory"=>"10"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hat"], ["description", "nice hat"], ["inventory", 10], ["price", 1], ["created_at", "2018-10-09 13:04:55.719195"], ["updated_at", "2018-10-09 13:04:55.719195"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (32.52ms)
+Completed 201 Created in 57ms (Views: 52.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/products" for ::1 at 2018-10-09 09:04:57 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XwTx5CnhKK9jwaXkxIFkAGLi57sNfFjLU8YiQy0RMdISpArML4q1qrfRTqSFnJHWzik8fn0UpY+8Diu4yGpAlg==", "product"=>{"name"=>"hat", "price"=>"1", "description"=>"nice hat", "inventory"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hat"], ["description", "nice hat"], ["inventory", 10], ["price", 1], ["created_at", "2018-10-09 13:04:57.381192"], ["updated_at", "2018-10-09 13:04:57.381192"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 201 Created in 5ms (Views: 1.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/products" for ::1 at 2018-10-09 09:06:49 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XwTx5CnhKK9jwaXkxIFkAGLi57sNfFjLU8YiQy0RMdISpArML4q1qrfRTqSFnJHWzik8fn0UpY+8Diu4yGpAlg==", "product"=>{"name"=>"hat", "price"=>"1", "description"=>"nice hat", "inventory"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hat"], ["description", "nice hat"], ["inventory", 10], ["price", 1], ["created_at", "2018-10-09 13:06:49.375735"], ["updated_at", "2018-10-09 13:06:49.375735"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 201 Created in 5ms (Views: 1.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/products" for ::1 at 2018-10-09 09:06:51 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XwTx5CnhKK9jwaXkxIFkAGLi57sNfFjLU8YiQy0RMdISpArML4q1qrfRTqSFnJHWzik8fn0UpY+8Diu4yGpAlg==", "product"=>{"name"=>"hat", "price"=>"1", "description"=>"nice hat", "inventory"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hat"], ["description", "nice hat"], ["inventory", 10], ["price", 1], ["created_at", "2018-10-09 13:06:51.147286"], ["updated_at", "2018-10-09 13:06:51.147286"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.16ms)
+Completed 201 Created in 5ms (Views: 1.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/products" for ::1 at 2018-10-09 09:08:42 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XwTx5CnhKK9jwaXkxIFkAGLi57sNfFjLU8YiQy0RMdISpArML4q1qrfRTqSFnJHWzik8fn0UpY+8Diu4yGpAlg==", "product"=>{"name"=>"hat", "price"=>"1", "description"=>"nice hat", "inventory"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hat"], ["description", "nice hat"], ["inventory", 10], ["price", 1], ["created_at", "2018-10-09 13:08:42.968361"], ["updated_at", "2018-10-09 13:08:42.968361"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 26]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.32ms)
+Completed 201 Created in 5ms (Views: 1.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/products" for ::1 at 2018-10-09 09:15:09 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XwTx5CnhKK9jwaXkxIFkAGLi57sNfFjLU8YiQy0RMdISpArML4q1qrfRTqSFnJHWzik8fn0UpY+8Diu4yGpAlg==", "product"=>{"name"=>"hat", "price"=>"1", "description"=>"nice hat", "inventory"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hat"], ["description", "nice hat"], ["inventory", 10], ["price", 1], ["created_at", "2018-10-09 13:15:09.587755"], ["updated_at", "2018-10-09 13:15:09.587755"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 27]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.24ms)
+Completed 201 Created in 5ms (Views: 1.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/new" for ::1 at 2018-10-09 09:16:41 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 44ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2018-10-09 09:16:52 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ziSz0A7ImyVGQ5xgbRzJO9yWVp8P+6R5sjp7gsmiqKymGnnRlC/aUEJ5THAqYbyQ7mCnwxXE9UJAOAV7l375g==", "product"=>{"name"=>"hat", "price"=>"1", "description"=>"nice hat", "inventory"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hat"], ["description", "nice hat"], ["inventory", 10], ["price", 1], ["created_at", "2018-10-09 13:16:52.902765"], ["updated_at", "2018-10-09 13:16:52.902765"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 28]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.5ms)
+Completed 201 Created in 5ms (Views: 1.7ms | ActiveRecord: 1.2ms)
