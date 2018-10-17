@@ -13,3 +13,31 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<div id="newly-created-product">
+  <h2 id="productName"></h2>
+  <span id="productPrice"></span>
+  <p id="productDescription"></p>
+  <p id="productInventory"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+$(function(){ // shortcut for $(document).ready() - JS code inside it executes only when DOM page is fully loaded
+  $('form').submit(function(event){ // hijacking the form's submit event by giving it an event handler
+    event.preventDefault(); // preventing the default submit action of form
+    var url = $(this).attr("action"); // string URL where AJAX POST request is sent = products_path, i.e., "/products"
+    var formData = $(this).serialize(); // JSON string params of form data, including values for authenticity_token, name, price, description and inventory
+    var jQXHRObject = $.post(url, formData); // Using jQuery post() method, send AJAX request of HTTP type POST to "/products" with the serialized form data
+    jQXHRObject.success(function(response){ // response = plain text JSON string of the JSON object representing the product AR instance that was just created
+      var availability = "<strong>Available</strong>";
+      if(response["inventory"] === 0){
+        availability = "<strong>Sold Out</strong>";
+      }
+      $("#productName").text(response["name"]);
+      $("#productPrice").text("$" + response["price"]);
+      $("#productDescription").text(response["description"]);
+      $("#productInventory").html(availability);
+    });
+  });
+});
+</script>

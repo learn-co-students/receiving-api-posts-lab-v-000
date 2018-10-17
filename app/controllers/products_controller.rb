@@ -16,12 +16,14 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
   end
-
+  # In products#create, render a JSON representation of the product after successfully creating it.
   def create
-    Product.create(product_params)
-    redirect_to products_path
+    @product = Product.create(product_params)
+    render json: @product, status: 201
   end
-
+  # specify json to tell requestor that the response is properly formatted JSON string,
+  # so we can operate on it using JS
+  # status 201 indicates that the product resource was created
   def show
     @product = Product.find(params[:id])
     respond_to do |format|
