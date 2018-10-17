@@ -1693,3 +1693,21 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-10-17 10:24:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (553.6ms)
+Completed 200 OK in 1083ms (Views: 1054.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-10-17 10:24:50 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A/ClyHZAAAsA05BF1ZkL0uSXzVTOS8y2vkBU7ZxUiLZ37sVkFOFfe/q913t0V7f3gkr5VE4/gtMYB6MwvDPAWQ==", "product"=>{"name"=>"Test Product", "price"=>"45", "description"=>"the coolest damn thing you've ever seen", "inventory"=>"6"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Test Product"], ["description", "the coolest damn thing you've ever seen"], ["inventory", 6], ["price", 45], ["created_at", "2018-10-17 17:24:50.149509"], ["updated_at", "2018-10-17 17:24:50.149509"]]
+  [1m[35m (17.5ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (64.06ms)
+Completed 201 Created in 120ms (Views: 97.2ms | ActiveRecord: 19.1ms)
