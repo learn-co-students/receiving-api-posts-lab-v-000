@@ -27,9 +27,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    # specifying the status: 201 which means that the resource was created.
-    render json: @post, status: 201
+    @post = Product.new(product_params)
+    if @post.save
+      # specifying the status: 201 which means that the resource was created.
+      render json: @post, status: 201
+    end 
   end
   # redirect_to products_path
 
