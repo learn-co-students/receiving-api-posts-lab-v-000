@@ -13,14 +13,6 @@ class ProductsController < ApplicationController
     render plain: product.description
   end
 
-  def new
-    @product = Product.new
-  end
-
-  def create
-    Product.create(product_params)
-    redirect_to products_path
-  end
 
   def show
     @product = Product.find(params[:id])
@@ -29,6 +21,21 @@ class ProductsController < ApplicationController
       format.json { render json: @product }
     end
   end
+
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @post = Product.new(product_params)
+    if @post.save
+      # specifying the status: 201 which means that the resource was created.
+      render json: @post, status: 201
+    end 
+  end
+  # redirect_to products_path
+
+
 
   private
 

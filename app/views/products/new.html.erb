@@ -1,4 +1,5 @@
 <h1>New Product</h1>
+
 <%= form_for @product do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -13,3 +14,42 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+
+<div id="productResult">
+  <h2 id="pName"></h2>
+  <p id="pBody"></p>
+  <p id="pPrice"></p>
+  <p id="pInventory"></p>
+</div>
+
+
+<script type="text/javascript" charset="utf-8">
+// use jQuery and AJAX to submit it
+// handle a JSON response
+//display the newly created blog post without redirecting to post show page.
+
+//add an event listener for $('form').submit() to our document ready()
+  $(function () {
+    $('form').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+      //testing
+      // alert("we r hack3rz");
+
+      // jQuery serialize() takes form data and serializes it
+      var values = $(this).serialize();
+      //jQuery post() to retrieve data, passes it the URL and values, returns a jqXHR object stored in posting variable
+      //implement Promise interface, used for deferred or asynchronous operations
+      var productPost = $.post('/products', values);
+      //use posting object to specify what should happen when the AJAX request is done (handle response)
+      productPost.done(function(data) {
+        var product = data;
+        $("#pName").text(product["name"]);
+        $("#pBody").text(product["description"]);
+        $("#pPrice").text(product["price"]);
+        $("#pInventory").text(product["inventory"]);
+      });
+    });
+  });
+</script>
