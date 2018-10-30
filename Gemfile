@@ -28,6 +28,8 @@ gem 'active_model_serializers'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
+gem 'puma'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -41,7 +43,7 @@ group :development, :test do
   gem 'capybara'
   gem 'faker'
   gem 'shoulda'
-  gem 'poltergeist', '~> 1.14.0'
+  gem 'poltergeist'
 end
 
 group :development do
