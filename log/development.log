@@ -1693,3 +1693,52 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2018-11-09 15:27:19 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/laurabodell/.rvm/gems/ruby-2.3.3/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 20ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2018-11-09 15:27:25 -0800
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 300ms (Views: 295.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for ::1 at 2018-11-09 15:27:27 -0800
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (572.9ms)
+Completed 200 OK in 588ms (Views: 587.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2018-11-09 15:27:44 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qxrfHEafc+t6bCSh280tlPUgy08TSDDi/RUiYDKcIUZ5uGzwu5UGAfkztPC3dqRwF0Pgi+67sWL25MsjVT7YRg==", "product"=>{"name"=>"Laura ", "price"=>"2", "description"=>"wjowu oseur", "inventory"=>"2"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Laura "], ["description", "wjowu oseur"], ["inventory", 2], ["price", 2], ["created_at", "2018-11-09 23:27:44.124191"], ["updated_at", "2018-11-09 23:27:44.124191"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (25.39ms)
+Completed 201 Created in 48ms (Views: 44.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/new" for ::1 at 2018-11-09 15:28:50 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (454.7ms)
+Completed 200 OK in 631ms (Views: 602.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2018-11-09 15:29:02 -0800
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oIHwsbEJj/lmF5fyvHIomvkd750dtNZZA053/xiJfwZyI0NdTAP6E+VIB6PQyaF+G37EWeBHV9kIv568fyuGBg==", "product"=>{"name"=>"Laura ", "price"=>"2", "description"=>"hihjihihk", "inventory"=>"3"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Laura "], ["description", "hihjihihk"], ["inventory", 3], ["price", 2], ["created_at", "2018-11-09 23:29:02.608459"], ["updated_at", "2018-11-09 23:29:02.608459"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (25.65ms)
+Completed 201 Created in 49ms (Views: 45.6ms | ActiveRecord: 1.4ms)
