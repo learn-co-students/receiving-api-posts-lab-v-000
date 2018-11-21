@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe "Products", type: :feature do
   before do
