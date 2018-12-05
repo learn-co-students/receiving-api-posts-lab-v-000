@@ -1693,3 +1693,76 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for 192.168.56.1 at 2018-12-05 11:09:37 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 1245ms (Views: 1179.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/new" for 192.168.56.1 at 2018-12-05 11:09:39 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2733.3ms)
+Completed 200 OK in 2788ms (Views: 2786.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 192.168.56.1 at 2018-12-05 11:10:02 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 79ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 192.168.56.1 at 2018-12-05 11:10:23 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rs4fEBuT3reG/0HTFfiUMkCZ3nPkY+TsuZ/4Pv+OfyH2ViMwTE/y+ChY5/snbUVZ/e8kusZSGc5+qa5yopybBA==", "product"=>{"name"=>"Widget1", "price"=>"3.98", "description"=>"everyone needs it", "inventory"=>"3"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Widget1"], ["description", "everyone needs it"], ["inventory", 3], ["price", 3], ["created_at", "2018-12-05 18:10:23.207934"], ["updated_at", "2018-12-05 18:10:23.207934"]]
+  [1m[36m (19.2ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (221.52ms)
+Completed 201 Created in 363ms (Views: 327.3ms | ActiveRecord: 25.0ms)
+
+
+Started GET "/products/new" for 192.168.56.1 at 2018-12-05 11:13:55 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 74ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 192.168.56.1 at 2018-12-05 11:14:15 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xXc8KNFcJD55kjToAohWlszuYBGeteymSKmxQyn9t5yd7wAIhoAIcdc1ksAwHYf9cZia2LyEEYSPn+cPdO9TuQ==", "product"=>{"name"=>"Widget2", "price"=>"4.66", "description"=>"how about this", "inventory"=>"0"}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Widget2"], ["description", "how about this"], ["inventory", 0], ["price", 4], ["created_at", "2018-12-05 18:14:15.650875"], ["updated_at", "2018-12-05 18:14:15.650875"]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (10.69ms)
+Completed 201 Created in 27ms (Views: 13.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/products/new" for 192.168.56.1 at 2018-12-05 11:17:42 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 192.168.56.1 at 2018-12-05 11:17:51 -0700
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2B7mdCKZC6FsKhZBUd9kP3vT2eJgWacghhNqdm4V9UeAhtpUdUUn7sKNsGljSrVUxqUjK0JoWgJBJTw6MwcRYg==", "product"=>{"name"=>"Widget1", "price"=>"3.98", "description"=>"ddddfddsd", "inventory"=>"3"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Widget1"], ["description", "ddddfddsd"], ["inventory", 3], ["price", 3], ["created_at", "2018-12-05 18:17:51.373368"], ["updated_at", "2018-12-05 18:17:51.373368"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 24]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (16.7ms)
+Completed 201 Created in 31ms (Views: 17.7ms | ActiveRecord: 4.0ms)
