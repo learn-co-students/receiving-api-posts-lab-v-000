@@ -26,12 +26,12 @@
  
       var values = $(this).serialize();
  
-      var posting = $.product('/products', values);
- 
+      var posting = $.post('/products', values); 
       posting.done(function(data) {
-        var product = data;
-        $("#productName").text(post["name"]);
-        $("#productDescription").text(post["description"]);
+        debugger
+        let product = data;
+        $("#productName").text(product["name"]);
+        $("#productDescription").text(product["description"]);
       });
     });
   });
