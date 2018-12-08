@@ -1693,3 +1693,34 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 23:11:32 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/waasif/.rvm/gems/ruby-2.5.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (20.4ms)
+Completed 200 OK in 152ms (Views: 112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-12-07 23:11:40 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 3919ms (Views: 3849.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-12-07 23:11:50 -0600
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2085.2ms)
+Completed 200 OK in 2313ms (Views: 2310.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-12-07 23:12:05 -0600
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B4672WbpVIqxnceM9pNzXLZSu+XtFhhjlMCmg28QazE9zvC3vHcHHBr0OoWEOmoby93A6qr6wRgVHSLMXssK1A==", "product"=>{"name"=>"Nintendo Switch", "price"=>"899", "description"=>"asdfasdf", "inventory"=>"5"}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.7ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Nintendo Switch"], ["description", "asdfasdf"], ["inventory", 5], ["price", 899], ["created_at", "2018-12-08 05:12:05.200411"], ["updated_at", "2018-12-08 05:12:05.200411"]]
+  [1m[36m (81.6ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mOrder Load (1.5ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (719.49ms)
+Completed 200 OK in 1125ms (Views: 1009.1ms | ActiveRecord: 100.1ms)
