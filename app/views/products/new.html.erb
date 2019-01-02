@@ -1,3 +1,4 @@
+<!---New Product Form with Ruby--->
 <h1>New Product</h1>
 <%= form_for @product do |f| %>
   <%= f.label :name %>
@@ -13,3 +14,33 @@
   <%= f.text_field :inventory %>
   <%= f.submit "submit" %>
 <% end %>
+
+<!---Display the New Product--->
+<div id="productResult">
+  <h2 id="name"></h2>
+  <p id="price"></p>
+  <p id="description"></p>
+</div>
+
+<!---Handling Form request in Javascript--->
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+  //The event handler to the form's submit even
+  $('form').submit(function(event) {
+    //prevent form from submitting the default way i.e stop the form from actually submitting
+    event.preventDefault();
+    //using the jQuery Serialize method to take our form data and serializes it
+      let productFormValues = $(this).serialize();
+      // using jQuery post method to the server to submit the data to the server and get the response
+      let postProduct = $.post('/products', productFormValues);
+      //using the postProudct object to specify what should happen when the AJAX request is `done`
+      postProduct.done(function(data) {
+      // Handling the Response
+        let postProduct2 = data;
+        $("#name").text(postProduct2["name"]);
+        $("#price").text(postProduct2["price"]);
+        $("#description").text(postProduct2["description"]);
+    });
+  });
+});
+</script>
