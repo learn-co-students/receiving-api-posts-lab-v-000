@@ -27,7 +27,7 @@
     $('form').submit(function(event) {
       //prevent form from submitting the default way
       event.preventDefault();
- 
+ debugger
       var values = $(this).serialize();
  
       var posting = $.post('/products', values);
@@ -41,6 +41,7 @@
          var product = data;
         $("#productName").text(product["name"]);
         $("#productDescription").text(product["description"]);
+        //$("#productPrice").text("$" + product["price"]);
         $("#productPrice").text(product["price"]);
       
       });
