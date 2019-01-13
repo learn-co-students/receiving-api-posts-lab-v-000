@@ -17,10 +17,11 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def create
-    Product.create(product_params)
-    redirect_to products_path
-  end
+ #2 update posts controller so that the show page is displayed after creating a new post.  AJAX cannot redirect as was possible with the old way
+ def create
+  @product = Product.create(product_params)
+  render json: @product, status: 201
+end
 
   def show
     @product = Product.find(params[:id])
