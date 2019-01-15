@@ -1693,3 +1693,164 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-01-15 18:15:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (19.8ms)
+Completed 200 OK in 147ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 18:15:07 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 2412ms (Views: 2315.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 18:15:10 +0000
+
+
+Started GET "/products/1" for ::1 at 2019-01-15 18:15:15 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 69ms (ActiveRecord: 1.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  app/controllers/products_controller.rb:26:in `show'
+
+
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (41.0ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.5ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.1ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (175.3ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (7.2ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.9ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.4ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.8ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (6197.4ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.3ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (6407.1ms)
+
+
+Started GET "/products/1" for ::1 at 2019-01-15 18:15:22 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (1.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 1.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  app/controllers/products_controller.rb:26:in `show'
+
+
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (40.1ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.6ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.5ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (146.8ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (3.7ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.0ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.3ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.8ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (109.1ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.9ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.4ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (224.6ms)
+
+
+Started GET "/products/nwq" for ::1 at 2019-01-15 18:15:55 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"nwq"}
+  [1m[36mProduct Load (1.7ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 42ms (ActiveRecord: 1.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=nwq):
+  app/controllers/products_controller.rb:26:in `show'
+
+
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (39.9ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (22.7ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.0ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (152.1ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (3.4ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.5ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (3.0ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.6ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (110.2ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (4.2ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.7ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (263.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 18:15:59 +0000
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (143.6ms)
+Completed 200 OK in 299ms (Views: 292.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 18:16:05 +0000
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D8u7ZfL6OGoV6ch2O8mfL0uFX/laBpTSewqrqgHdcvOBtb2aVplyeexXLFPxxH3fHcUvNMA6OTYnp8cymp5AUA==", "product"=>{"name"=>"kj", "price"=>"kjh", "description"=>"kjhkj", "inventory"=>"hh"}, "commit"=>"submit"}
+  [1m[35m (1.1ms)[0m  begin transaction
+  [1m[36mSQL (5.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "kj"], ["description", "kjhkj"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-15 18:16:05.172821"], ["updated_at", "2019-01-15 18:16:05.172821"]]
+  [1m[35m (124.5ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (1.7ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (334.84ms)
+Completed 201 Created in 841ms (Views: 654.9ms | ActiveRecord: 136.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 18:21:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (5795.9ms)
+Completed 200 OK in 7668ms (Views: 7515.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 18:21:32 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.7ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 179ms (Views: 172.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/1" for ::1 at 2019-01-15 18:21:39 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 60ms (ActiveRecord: 2.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  app/controllers/products_controller.rb:26:in `show'
+
+
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (37.5ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.9ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.8ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (152.2ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (3.5ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.1ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.8ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (3.6ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (118.3ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.4ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.5ms)
+  Rendered /home/blackbeltdiaries/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (264.9ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 18:21:54 +0000
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 181ms (Views: 176.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 18:21:58 +0000
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LcxWImHRx2QzTeZ71BVnHokGISpfKImgiC6d+TiyDDSjslDdxbKNd8rzAl4eGIXu30ZR58UUJETUg/Fho/E+lw==", "product"=>{"name"=>"1", "price"=>"1", "description"=>"1", "inventory"=>"1"}}
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "1"], ["description", "1"], ["inventory", 1], ["price", 1], ["created_at", "2019-01-15 18:21:58.665414"], ["updated_at", "2019-01-15 18:21:58.665414"]]
+  [1m[35m (114.1ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (1.5ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (240.04ms)
+Completed 201 Created in 678ms (Views: 505.1ms | ActiveRecord: 123.9ms)
