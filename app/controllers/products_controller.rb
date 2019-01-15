@@ -18,8 +18,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    redirect_to products_path
+    @product = Product.create(product_params)
+    # respond_to do |format|
+    #   format.html { redirect_to products_path }
+    #   format.json { render json: @product, status: 201 }
+    # end
+    render json: @product, status: 201
+    
   end
 
   def show
