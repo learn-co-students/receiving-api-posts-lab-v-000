@@ -1693,3 +1693,1778 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:05:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 653ms (Views: 638.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/12.json" for ::1 at 2019-01-15 19:05:17 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 12]]
+[active_model_serializers]   [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 12]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (38.66ms)
+Completed 200 OK in 73ms (Views: 64.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:05:27 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (619.6ms)
+Completed 200 OK in 639ms (Views: 638.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:05:49 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4dH+rfuWmC/ufGieIyG31hNaDWcmnpt8XyRFKDlFb6ssuPr91iqm9sveii0xCZ37Ak83DGf+N+WwM49LhqhEcQ==", "product"=>{"name"=>"Poop", "price"=>"200", "description"=>"yummy poop for sale", "inventory"=>"3"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Poop"], ["description", "yummy poop for sale"], ["inventory", 3], ["price", 200], ["created_at", "2019-01-16 00:05:49.138953"], ["updated_at", "2019-01-16 00:05:49.138953"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:05:49 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:09:50 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/13.json" for ::1 at 2019-01-15 19:09:54 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"13"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 13]]
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 13]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (16.01ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:09:58 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:10:25 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2W2F0iRMaIKIIV5V+P8yJu61zPMfm5hY7KW5PDHs4OoUBIGCCfBWW62DvObq1xgL/6D2mF77NMEDsnNfjgHLMA==", "product"=>{"name"=>"cars cars cars", "price"=>"32341341", "description"=>"fast fast fast fast", "inventory"=>"0"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "cars cars cars"], ["description", "fast fast fast fast"], ["inventory", 0], ["price", 32341341], ["created_at", "2019-01-16 00:10:25.438886"], ["updated_at", "2019-01-16 00:10:25.438886"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/24.json" for ::1 at 2019-01-15 19:10:33 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 24]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=24):
+  app/controllers/products_controller.rb:33:in `show'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (74.8ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:10:33 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:18:27 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:19:46 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:19:50 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:20:00 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rXk/DeYXCmszl72KEuLSqPmGeqtlRiRVnEuAlhtYNotgEDtdy6s0shY1XzkAyviF6JNAwCQmiMxzXEr1pLUdUQ==", "product"=>{"name"=>"asdfwe4efd", "price"=>"asdfv", "description"=>"asfg34erdfcx", "inventory"=>"2"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asdfwe4efd"], ["description", "asfg34erdfcx"], ["inventory", 2], ["price", 0], ["created_at", "2019-01-16 00:20:00.567538"], ["updated_at", "2019-01-16 00:20:00.567538"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 25ms (Views: 19.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:20:04 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/25.json" for ::1 at 2019-01-15 19:20:04 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"25"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 25]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=25):
+  app/controllers/products_controller.rb:29:in `show'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (77.5ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:20:44 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for ::1 at 2019-01-15 19:20:50 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  app/controllers/products_controller.rb:29:in `show'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.1ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (151.3ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:24:19 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:24:23 -0500
+Processing by ProductsController#new as HTML
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (19.48ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:24:32 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:24:42 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:26:14 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WXuRmf8KyMaWiZ/FLaLwdaUUi9w4dR+KcDy9E8684zWUEpXJ0rb2H7MrfXY/itpYtAGxt3kVsxOfK3dwcVHI7w==", "product"=>{"name"=>"afgawerg", "price"=>"arfgarg", "description"=>"argarg", "inventory"=>"argWRG"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "afgawerg"], ["description", "argarg"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 00:26:14.761849"], ["updated_at", "2019-01-16 00:26:14.761849"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 19:26:14 -0500
+
+
+Started GET "/products" for ::1 at 2019-01-15 19:27:41 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:27:41 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 19:27:41 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:27:41 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 19:27:42 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:27:42 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 19:27:42 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:27:42 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 19:27:42 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 19:27:42 -0500
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:27:46 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:27:46 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:27:46 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 19:27:47 -0500
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:27:54 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GAjuWNWaKEScvLJ2j/tvbdQW+AmUpTmRAbRaalfKSaDVYeoI+CYWnbkeUMWd00VAxQPCYtXFlQjuo5AJ6Cdieg==", "product"=>{"name"=>"asdfasdf", "price"=>"adsfasdf", "description"=>"asdfasdf", "inventory"=>"2"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdfasdf"], ["description", "asdfasdf"], ["inventory", 2], ["price", 0], ["created_at", "2019-01-16 00:27:54.611189"], ["updated_at", "2019-01-16 00:27:54.611189"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 19:27:54 -0500
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:30:22 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 34ms (Views: 24.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:30:29 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7XKZkChX8gC29IzdgT+wsi5IrpyG9a1p8/Y2UJB26K8gG53ABevM2ZNWbm6TF5qfP12U98eVAfAc4fwzL5vDdQ==", "product"=>{"name"=>"asdf", "price"=>";kljh", "description"=>"lkjb", "inventory"=>"2"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asdf"], ["description", "lkjb"], ["inventory", 2], ["price", 0], ["created_at", "2019-01-16 00:30:29.207457"], ["updated_at", "2019-01-16 00:30:29.207457"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.9ms)
+
+ArgumentError (too few arguments):
+  app/controllers/products_controller.rb:22:in `format'
+  app/controllers/products_controller.rb:22:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.4ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:35:19 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7XKZkChX8gC29IzdgT+wsi5IrpyG9a1p8/Y2UJB26K8gG53ABevM2ZNWbm6TF5qfP12U98eVAfAc4fwzL5vDdQ==", "product"=>{"name"=>"asdf", "price"=>";kljh", "description"=>"lkjb", "inventory"=>"2"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["description", "lkjb"], ["inventory", 2], ["price", 0], ["created_at", "2019-01-16 00:35:19.983001"], ["updated_at", "2019-01-16 00:35:19.983001"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 39ms (Views: 21.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 19:35:25 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 19:35:37 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AVaGwA4vMrLHVDtKIyKnUdaWmW4fubjNtRwmgoS5hG3MP4KQI5MMa+L22fkxCo18x4OjBV7ZFFRaC+zhO1Svtw==", "product"=>{"name"=>"bunny ", "price"=>"399", "description"=>"a;slkfj ;owi4ur ;odsnf;la k", "inventory"=>"5"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "bunny "], ["description", "a;slkfj ;owi4ur ;odsnf;la k"], ["inventory", 5], ["price", 399], ["created_at", "2019-01-16 00:35:37.914979"], ["updated_at", "2019-01-16 00:35:37.914979"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 20:55:11 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 20:55:15 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 20:55:20 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ltelZhTw62hWAr5uGkyPdTfox8+G6olusYqa3HfYKIXMlrFte/9dIT66EqqQRgQxcqZdH97BrxV0eAIzjJLeA==", "product"=>{"name"=>"asdfasdf", "price"=>"asdfasdf", "description"=>"asdfasdf", "inventory"=>"3"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asdfasdf"], ["description", "asdfasdf"], ["inventory", 3], ["price", 0], ["created_at", "2019-01-16 01:55:20.556464"], ["updated_at", "2019-01-16 01:55:20.556464"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 20:56:31 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 20:56:35 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 20:56:40 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GClaQkKxiECuEmWmmY4EnFWBuQbtAuHojFDmQHIAkY7VQF4Sbw22mYuwhxWLpi6xRJSDbaxiTXFjRywjze26VA==", "product"=>{"name"=>"asdf", "price"=>"asdf", "description"=>"asdf", "inventory"=>"2"}, "commit"=>"submit"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ArgumentError (too few arguments):
+  app/controllers/products_controller.rb:25:in `format'
+  app/controllers/products_controller.rb:25:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.9ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (150.6ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 20:56:56 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GClaQkKxiECuEmWmmY4EnFWBuQbtAuHojFDmQHIAkY7VQF4Sbw22mYuwhxWLpi6xRJSDbaxiTXFjRywjze26VA==", "product"=>{"name"=>"asdf", "price"=>"asdf", "description"=>"asdf", "inventory"=>"2"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asdf"], ["description", "asdf"], ["inventory", 2], ["price", 0], ["created_at", "2019-01-16 01:56:56.919183"], ["updated_at", "2019-01-16 01:56:56.919183"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 44ms (Views: 25.3ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 20:59:50 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GClaQkKxiECuEmWmmY4EnFWBuQbtAuHojFDmQHIAkY7VQF4Sbw22mYuwhxWLpi6xRJSDbaxiTXFjRywjze26VA==", "product"=>{"name"=>"asdf", "price"=>"asdf", "description"=>"asdf", "inventory"=>"2"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["description", "asdf"], ["inventory", 2], ["price", 0], ["created_at", "2019-01-16 01:59:50.743424"], ["updated_at", "2019-01-16 01:59:50.743424"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30ms (Views: 19.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:00:18 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:00:21 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:00:27 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IgJ/FH5trMsb8JOvNwAA7ZqpwH7hz7SrrHoHU6Pvpubva3tEU9GSEj5ScRwlKCrAi7z6FaCvGDJDbc0wHAKNPA==", "product"=>{"name"=>"asd", "price"=>"lkjhkljh", "description"=>"jhblkj", "inventory"=>"7"}, "commit"=>"submit"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+RuntimeError (#<Product id: nil, name: "asd", price: 0, created_at: nil, updated_at: nil, inventory: 7, description: "jhblkj">):
+  app/controllers/products_controller.rb:22:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.1ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.5ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:01:12 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IgJ/FH5trMsb8JOvNwAA7ZqpwH7hz7SrrHoHU6Pvpubva3tEU9GSEj5ScRwlKCrAi7z6FaCvGDJDbc0wHAKNPA==", "product"=>{"name"=>"asd", "price"=>"lkjhkljh", "description"=>"jhblkj", "inventory"=>"7"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asd"], ["description", "jhblkj"], ["inventory", 7], ["price", 0], ["created_at", "2019-01-16 02:01:12.326900"], ["updated_at", "2019-01-16 02:01:12.326900"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 3.9ms)
+
+RuntimeError (#<Product id: 33, name: "asd", price: 0, created_at: "2019-01-16 02:01:12", updated_at: "2019-01-16 02:01:12", inventory: 7, description: "jhblkj">):
+  app/controllers/products_controller.rb:23:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.7ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:01:40 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IgJ/FH5trMsb8JOvNwAA7ZqpwH7hz7SrrHoHU6Pvpubva3tEU9GSEj5ScRwlKCrAi7z6FaCvGDJDbc0wHAKNPA==", "product"=>{"name"=>"asd", "price"=>"lkjhkljh", "description"=>"jhblkj", "inventory"=>"7"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "asd"], ["description", "jhblkj"], ["inventory", 7], ["price", 0], ["created_at", "2019-01-16 02:01:40.493649"], ["updated_at", "2019-01-16 02:01:40.493649"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 40ms (Views: 22.7ms | ActiveRecord: 7.2ms)
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateOrders (20160125165439)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "invoice_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160125165439"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateInvoices (20160125170351)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "invoices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160125170351"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateCustomers (20160125172252)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160125172252"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateProducts (20160125172335)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160125172335"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateOrderedproducts (20160125172450)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "ordered_products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "order_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160125172450"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to AddFieldsToProducts (20160221021155)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "products" ADD "inventory" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "products" ADD "description" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160221021155"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mOrder Load (0.1ms)[0m  SELECT "orders".* FROM "orders"
+  [1m[36mInvoice Load (0.1ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "tv"], ["price", 479], ["inventory", 3], ["description", "Tempore molestiae accusantium. Ad aut sunt. Non hic nihil."], ["created_at", "2019-01-16 02:02:35.496990"], ["updated_at", "2019-01-16 02:02:35.496990"]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "vcr"], ["price", 943], ["inventory", 0], ["description", "Dolorem exercitationem quia. Dolores exercitationem consequatur. Et consectetur et."], ["created_at", "2019-01-16 02:02:35.506320"], ["updated_at", "2019-01-16 02:02:35.506320"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "macbook"], ["price", 582], ["inventory", 1], ["description", "Dolorum ea recusandae. Iusto distinctio aliquid. Facilis minima labore."], ["created_at", "2019-01-16 02:02:35.509894"], ["updated_at", "2019-01-16 02:02:35.509894"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "macbook air"], ["price", 629], ["inventory", 1], ["description", "Et officia dolor. Facere sit fugit. Voluptas ratione natus."], ["created_at", "2019-01-16 02:02:35.513340"], ["updated_at", "2019-01-16 02:02:35.513340"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "mouse"], ["price", 1229], ["inventory", 1], ["description", "Rem voluptatem qui. Molestias repellat eveniet. Est voluptatum facilis."], ["created_at", "2019-01-16 02:02:35.517502"], ["updated_at", "2019-01-16 02:02:35.517502"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "chair"], ["price", 90], ["inventory", 0], ["description", "Est voluptas et. Repellendus dicta qui. Temporibus aut quia."], ["created_at", "2019-01-16 02:02:35.523067"], ["updated_at", "2019-01-16 02:02:35.523067"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "desk"], ["price", 409], ["inventory", 3], ["description", "Deserunt dolor nemo. Recusandae quis et. Optio aut assumenda."], ["created_at", "2019-01-16 02:02:35.528500"], ["updated_at", "2019-01-16 02:02:35.528500"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "lamp"], ["price", 1256], ["inventory", 1], ["description", "Fugit quibusdam doloremque. Non quia explicabo. Quo culpa incidunt."], ["created_at", "2019-01-16 02:02:35.533108"], ["updated_at", "2019-01-16 02:02:35.533108"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["price", 979], ["inventory", 1], ["description", "Eos ratione neque. Voluptatem incidunt unde. Laudantium et et."], ["created_at", "2019-01-16 02:02:35.537744"], ["updated_at", "2019-01-16 02:02:35.537744"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Derek Denesik"], ["created_at", "2019-01-16 02:02:35.547101"], ["updated_at", "2019-01-16 02:02:35.547101"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Herb Ernser I"], ["created_at", "2019-01-16 02:02:35.551343"], ["updated_at", "2019-01-16 02:02:35.551343"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Jamel Cole"], ["created_at", "2019-01-16 02:02:35.554770"], ["updated_at", "2019-01-16 02:02:35.554770"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jae Dickinson DDS"], ["created_at", "2019-01-16 02:02:35.558005"], ["updated_at", "2019-01-16 02:02:35.558005"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Noble Fisher"], ["created_at", "2019-01-16 02:02:35.562242"], ["updated_at", "2019-01-16 02:02:35.562242"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-16 02:02:35.570063"], ["updated_at", "2019-01-16 02:02:35.570063"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2019-01-16 02:02:35.573590"], ["updated_at", "2019-01-16 02:02:35.573590"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-16 02:02:35.577037"], ["updated_at", "2019-01-16 02:02:35.577037"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2019-01-16 02:02:35.580354"], ["updated_at", "2019-01-16 02:02:35.580354"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-16 02:02:35.583862"], ["updated_at", "2019-01-16 02:02:35.583862"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 4], ["invoice_id", 1], ["created_at", "2019-01-16 02:02:35.591375"], ["updated_at", "2019-01-16 02:02:35.591375"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 1], ["product_id", 7], ["created_at", "2019-01-16 02:02:35.635026"], ["updated_at", "2019-01-16 02:02:35.635026"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 2], ["invoice_id", 4], ["created_at", "2019-01-16 02:02:35.639289"], ["updated_at", "2019-01-16 02:02:35.639289"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 2], ["product_id", 4], ["created_at", "2019-01-16 02:02:35.645176"], ["updated_at", "2019-01-16 02:02:35.645176"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 3], ["invoice_id", 1], ["created_at", "2019-01-16 02:02:35.649694"], ["updated_at", "2019-01-16 02:02:35.649694"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 3], ["product_id", 8], ["created_at", "2019-01-16 02:02:35.654855"], ["updated_at", "2019-01-16 02:02:35.654855"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 2], ["invoice_id", 3], ["created_at", "2019-01-16 02:02:35.660687"], ["updated_at", "2019-01-16 02:02:35.660687"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 4], ["product_id", 7], ["created_at", "2019-01-16 02:02:35.668001"], ["updated_at", "2019-01-16 02:02:35.668001"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 2], ["invoice_id", 5], ["created_at", "2019-01-16 02:02:35.672122"], ["updated_at", "2019-01-16 02:02:35.672122"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 5], ["product_id", 5], ["created_at", "2019-01-16 02:02:35.678425"], ["updated_at", "2019-01-16 02:02:35.678425"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 5], ["invoice_id", 4], ["created_at", "2019-01-16 02:02:35.683785"], ["updated_at", "2019-01-16 02:02:35.683785"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 6], ["product_id", 5], ["created_at", "2019-01-16 02:02:35.688279"], ["updated_at", "2019-01-16 02:02:35.688279"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 4], ["invoice_id", 1], ["created_at", "2019-01-16 02:02:35.692009"], ["updated_at", "2019-01-16 02:02:35.692009"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 7], ["product_id", 2], ["created_at", "2019-01-16 02:02:35.697538"], ["updated_at", "2019-01-16 02:02:35.697538"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 3], ["invoice_id", 2], ["created_at", "2019-01-16 02:02:35.701710"], ["updated_at", "2019-01-16 02:02:35.701710"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 8], ["product_id", 8], ["created_at", "2019-01-16 02:02:35.706654"], ["updated_at", "2019-01-16 02:02:35.706654"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 3], ["invoice_id", 4], ["created_at", "2019-01-16 02:02:35.710479"], ["updated_at", "2019-01-16 02:02:35.710479"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 9], ["product_id", 3], ["created_at", "2019-01-16 02:02:35.714979"], ["updated_at", "2019-01-16 02:02:35.714979"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 4], ["invoice_id", 1], ["created_at", "2019-01-16 02:02:35.718868"], ["updated_at", "2019-01-16 02:02:35.718868"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 10], ["product_id", 7], ["created_at", "2019-01-16 02:02:35.723750"], ["updated_at", "2019-01-16 02:02:35.723750"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:02:39 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:02:46 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:02:55 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"00VJh+EfisO7k015TNDYt2cDoE0DzvPmULH86Mdg/64eLE3XzKO0Gp4xr8pe+PKadhaaJkKuX3+/pjaLeI3UdA==", "product"=>{"name"=>"Fluffy", "price"=>"2", "description"=>"very soft", "inventory"=>"8"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Fluffy"], ["description", "very soft"], ["inventory", 8], ["price", 2], ["created_at", "2019-01-16 02:02:55.832382"], ["updated_at", "2019-01-16 02:02:55.832382"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/11.json" for ::1 at 2019-01-15 21:03:06 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 11]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=11):
+  app/controllers/products_controller.rb:30:in `show'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (70.3ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:03:06 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:03:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 235ms (Views: 218.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:03:39 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:03:43 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (616.5ms)
+Completed 200 OK in 633ms (Views: 632.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:03:53 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OCNbUj7aQqu3WpSCoDvU0d6JPW1F/cc/4D12C7247Wr1Sl8CE2Z8cpL4djGyE/78z5wHBgSda6YPKrxoAlXGsA==", "product"=>{"name"=>"Munchkin", "price"=>"333", "description"=>"cute", "inventory"=>"2"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Munchkin"], ["description", "cute"], ["inventory", 2], ["price", 333], ["created_at", "2019-01-16 02:03:53.943014"], ["updated_at", "2019-01-16 02:03:53.943014"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:04:27 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 26.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:04:37 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q39HfQIclkF/Zs6Q8GslowwzygddARbYUqudxf0SAXpmFkMtL6ComFrELCPiQw+OHSbwbBxhukG9vFemQv8qoA==", "product"=>{"name"=>"ddd", "price"=>"44444444", "description"=>"444", "inventory"=>"4"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "ddd"], ["description", "444"], ["inventory", 4], ["price", 44444444], ["created_at", "2019-01-16 02:04:37.931582"], ["updated_at", "2019-01-16 02:04:37.931582"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 52ms (Views: 27.6ms | ActiveRecord: 1.7ms)
+
+NameError (undefined local variable or method `path' for #<ProductsController:0x007feb954f7210>):
+  app/controllers/products_controller.rb:26:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (153.1ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:04:50 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q39HfQIclkF/Zs6Q8GslowwzygddARbYUqudxf0SAXpmFkMtL6ComFrELCPiQw+OHSbwbBxhukG9vFemQv8qoA==", "product"=>{"name"=>"ddd", "price"=>"44444444", "description"=>"444", "inventory"=>"4"}, "commit"=>"submit"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "ddd"], ["description", "444"], ["inventory", 4], ["price", 44444444], ["created_at", "2019-01-16 02:04:50.783146"], ["updated_at", "2019-01-16 02:04:50.783146"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 65ms (Views: 28.4ms | ActiveRecord: 3.6ms)
+
+NameError (undefined local variable or method `current_path' for #<ProductsController:0x007feb9fa3b898>
+Did you mean?  controller_path):
+  app/controllers/products_controller.rb:26:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.8ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:05:01 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q39HfQIclkF/Zs6Q8GslowwzygddARbYUqudxf0SAXpmFkMtL6ComFrELCPiQw+OHSbwbBxhukG9vFemQv8qoA==", "product"=>{"name"=>"ddd", "price"=>"44444444", "description"=>"444", "inventory"=>"4"}, "commit"=>"submit"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "ddd"], ["description", "444"], ["inventory", 4], ["price", 44444444], ["created_at", "2019-01-16 02:05:01.230356"], ["updated_at", "2019-01-16 02:05:01.230356"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 40ms (Views: 27.2ms | ActiveRecord: 3.5ms)
+
+RuntimeError ("products"):
+  app/controllers/products_controller.rb:26:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:05:39 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q39HfQIclkF/Zs6Q8GslowwzygddARbYUqudxf0SAXpmFkMtL6ComFrELCPiQw+OHSbwbBxhukG9vFemQv8qoA==", "product"=>{"name"=>"ddd", "price"=>"44444444", "description"=>"444", "inventory"=>"4"}, "commit"=>"submit"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "ddd"], ["description", "444"], ["inventory", 4], ["price", 44444444], ["created_at", "2019-01-16 02:05:39.888168"], ["updated_at", "2019-01-16 02:05:39.888168"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 65ms (Views: 31.2ms | ActiveRecord: 7.0ms)
+
+NameError (undefined local variable or method `page' for #<ProductsController:0x007feb9cc6cc00>):
+  app/controllers/products_controller.rb:26:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.1ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.3ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:07:13 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q39HfQIclkF/Zs6Q8GslowwzygddARbYUqudxf0SAXpmFkMtL6ComFrELCPiQw+OHSbwbBxhukG9vFemQv8qoA==", "product"=>{"name"=>"ddd", "price"=>"44444444", "description"=>"444", "inventory"=>"4"}, "commit"=>"submit"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "ddd"], ["description", "444"], ["inventory", 4], ["price", 44444444], ["created_at", "2019-01-16 02:07:13.277280"], ["updated_at", "2019-01-16 02:07:13.277280"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 41ms (Views: 24.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:07:17 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:07:23 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vJ7B4/BsXLfWeDt45w2NM32bgP9HPaw30tCmgch1/Fpx98Wz3dBibvPa2cv1JacebI66lAZdAK49x2zid5jXgA==", "product"=>{"name"=>"88888", "price"=>"8", "description"=>"888", "inventory"=>"88"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "88888"], ["description", "888"], ["inventory", 88], ["price", 8], ["created_at", "2019-01-16 02:07:23.204798"], ["updated_at", "2019-01-16 02:07:23.204798"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:09:15 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:09:19 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:09:26 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QeBfhreiufiMhP81UUC36TA81beDCWFR4UFd22xmbU2MiVvWmh6HIakmHYZDaJ3EISnv3MJpzcgOVpe404tGlw==", "product"=>{"name"=>"iii", "price"=>"iiiii", "description"=>"ii", "inventory"=>"ii"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "iii"], ["description", "ii"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:09:26.527455"], ["updated_at", "2019-01-16 02:09:26.527455"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 24.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:19:30 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:19:35 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:19:44 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3TIql9R5V7ZJT1cCdLQPQhk8M0Bd2hvRNwgS58CWwlMQWy7H+cVpb2zttbFmnCVvCCkJKxy6t0jYH9iEf3vpiQ==", "product"=>{"name"=>"7777777", "price"=>"777", "description"=>"777", "inventory"=>"77"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "7777777"], ["description", "777"], ["inventory", 77], ["price", 777], ["created_at", "2019-01-16 02:19:44.743740"], ["updated_at", "2019-01-16 02:19:44.743740"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/20.json" for ::1 at 2019-01-15 21:19:48 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"20"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 20]]
+Completed 404 Not Found in 14ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=20):
+  app/controllers/products_controller.rb:33:in `show'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (67.8ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:19:49 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:20:11 -0500
+Processing by ProductsController#new as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+RuntimeError ({"controller"=>"products", "action"=>"new"}):
+  app/controllers/products_controller.rb:18:in `new'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (146.9ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:20:34 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 21.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:20:57 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CRM26BrRIEKSFx8NHWQuM4+wEvzJIUAWIWbegCv0KRrEejK4N20em7e1/b4PTAQenqUol4hB7I/OcRTjlBkCwA==", "product"=>{"name"=>"hpiuniu", "price"=>"oi;o", "description"=>";oi;", "inventory"=>"in;"}, "commit"=>"submit"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "hpiuniu"], ["description", ";oi;"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:20:57.510893"], ["updated_at", "2019-01-16 02:20:57.510893"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 47ms (Views: 32.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:21:24 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 24.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:21:29 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K1s4dsNjwIUe6DJ//6rpedLc28lXLVSRn9Kv4cEs7WLmMjwm7t/+XDtK0MztgsNUw8nhohZN+AhwxWWCfsHGuA==", "product"=>{"name"=>";ljl;", "price"=>"jklj;kl", "description"=>"jl;jlj", "inventory"=>"ljkl"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", ";ljl;"], ["description", "jl;jlj"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:21:29.719297"], ["updated_at", "2019-01-16 02:21:29.719297"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 32ms (Views: 26.7ms | ActiveRecord: 1.6ms)
+
+RuntimeError ({"utf8"=>"✓", "authenticity_token"=>"K1s4dsNjwIUe6DJ//6rpedLc28lXLVSRn9Kv4cEs7WLmMjwm7t/+XDtK0MztgsNUw8nhohZN+AhwxWWCfsHGuA==", "product"=>{"name"=>";ljl;", "price"=>"jklj;kl", "description"=>"jl;jlj", "inventory"=>"ljkl"}, "commit"=>"submit", "controller"=>"products", "action"=>"create"}):
+  app/controllers/products_controller.rb:26:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.8ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.9ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:22:26 -0500
+
+SyntaxError (/Users/lauratrager/Development/code/receiving-api-posts-lab-v-000/app/controllers/products_controller.rb:21: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+    raise (if @product = Product.create(product_params)).inspect
+                                                        ^
+/Users/lauratrager/Development/code/receiving-api-posts-lab-v-000/app/controllers/products_controller.rb:43: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/products_controller.rb:21: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/controllers/products_controller.rb:43: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.4ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:22:50 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K1s4dsNjwIUe6DJ//6rpedLc28lXLVSRn9Kv4cEs7WLmMjwm7t/+XDtK0MztgsNUw8nhohZN+AhwxWWCfsHGuA==", "product"=>{"name"=>";ljl;", "price"=>"jklj;kl", "description"=>"jl;jlj", "inventory"=>"ljkl"}, "commit"=>"submit"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", ";ljl;"], ["description", "jl;jlj"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:22:50.346021"], ["updated_at", "2019-01-16 02:22:50.346021"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 7.3ms)
+
+RuntimeError (#<Product id: 22, name: ";ljl;", price: 0, created_at: "2019-01-16 02:22:50", updated_at: "2019-01-16 02:22:50", inventory: 0, description: "jl;jlj">):
+  app/controllers/products_controller.rb:22:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (134.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:23:22 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 37ms (Views: 29.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:23:25 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2JtxrZRWVCLe1E80ZEpwyP0XzvtZFY1cukxWwiAbSkwV8nX9uepq+/t2rYd2Ylrl7AL0kBh1IcVVW5yhn/Zhlg==", "product"=>{"name"=>"j;lj", "price"=>";ljklj", "description"=>"ljlkj", "inventory"=>"lkjl;"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "j;lj"], ["description", "ljlkj"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:23:25.991983"], ["updated_at", "2019-01-16 02:23:25.991983"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 1.4ms)
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/products_controller.rb:22:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.1ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.4ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:24:02 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2JtxrZRWVCLe1E80ZEpwyP0XzvtZFY1cukxWwiAbSkwV8nX9uepq+/t2rYd2Ylrl7AL0kBh1IcVVW5yhn/Zhlg==", "product"=>{"name"=>"j;lj", "price"=>";ljklj", "description"=>"ljlkj", "inventory"=>"lkjl;"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "j;lj"], ["description", "ljlkj"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:24:02.260389"], ["updated_at", "2019-01-16 02:24:02.260389"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 47ms (Views: 29.9ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/products/25.json" for ::1 at 2019-01-15 21:24:05 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"25"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 25]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=25):
+  app/controllers/products_controller.rb:29:in `show'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (68.0ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:24:05 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:24:12 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:24:17 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ITw+Q0yt73HGHo7Z1deiJj3soeW3DCj2rXRwz1N8ygV7fSpII6JZOK6mIh1f3SlieKI7Ne8nDo1ohuggqDY8g==", "product"=>{"name"=>"jn;kn;KN;Knkjnkn", "price"=>"kjn;k", "description"=>"njjkn", "inventory"=>";kn;j"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "jn;kn;KN;Knkjnkn"], ["description", "njjkn"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:24:17.366091"], ["updated_at", "2019-01-16 02:24:17.366091"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:25:01 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 23.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:25:05 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zt5zEvaefXwG7+9fWxBDVzxFZVgmHOTWzTEn14DHII4Dt3dC2yJDpSNNDexJOGl6LVBfM2d8SE8iJu20PyoLVA==", "product"=>{"name"=>"n;n;kn", "price"=>";n;n", "description"=>"n;", "inventory"=>"n;kjnjk"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "n;n;kn"], ["description", "n;"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:25:05.449869"], ["updated_at", "2019-01-16 02:25:05.449869"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 34ms (Views: 26.9ms | ActiveRecord: 2.0ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/products_controller.rb:26:in `create'
+
+
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.2ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.7ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lauratrager/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (129.8ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:26:10 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zt5zEvaefXwG7+9fWxBDVzxFZVgmHOTWzTEn14DHII4Dt3dC2yJDpSNNDexJOGl6LVBfM2d8SE8iJu20PyoLVA==", "product"=>{"name"=>"n;n;kn", "price"=>";n;n", "description"=>"n;", "inventory"=>"n;kjnjk"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "n;n;kn"], ["description", "n;"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:26:10.536469"], ["updated_at", "2019-01-16 02:26:10.536469"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 44ms (Views: 30.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:26:15 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:26:19 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"miDzs5kyfKyffusWmjIwx6COlOEY278XHfZqXxz5z2JXSffjtI5CdbrcCaWIGhrqsZuuilm7E47y4aA8oxTkuA==", "product"=>{"name"=>"kajsdnf", "price"=>";kjn", "description"=>";kjnb", "inventory"=>";kbj"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "kajsdnf"], ["description", ";kjnb"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:26:19.021700"], ["updated_at", "2019-01-16 02:26:19.021700"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:27:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 220ms (Views: 203.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:27:17 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (584.9ms)
+Completed 200 OK in 602ms (Views: 600.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:27:25 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b966BRvQSexGkbnBbUWNMJguu/PDCA47dtYyLby5nl+it75VNmx3NWMzW3J/bacdiTuBmIJooqKZwfhOA1S1hQ==", "product"=>{"name"=>";lkj;lkj", "price"=>";ljkl;kj", "description"=>"l;jklj", "inventory"=>"l;kjl;kj"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", ";lkj;lkj"], ["description", "l;jklj"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:27:25.928758"], ["updated_at", "2019-01-16 02:27:25.928758"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:28:05 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:28:10 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:28:14 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wIzYom54fQ8kGafRwVnj2lRSHl0gYyIsxJA0ActyW70N5dzyQ8RD1gG7RWLTccn3RUckNmEDjrUrh/5idJ9wZw==", "product"=>{"name"=>";lkjl", "price"=>";kj;lkj", "description"=>";lkj;kljl;", "inventory"=>"j;lkj"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", ";lkjl"], ["description", ";lkj;kljl;"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:28:14.262017"], ["updated_at", "2019-01-16 02:28:14.262017"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:28:46 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:28:50 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fEPJiRdTivor+wqd41D+yXhpq/SOc6vw+w9SOKXt8mmxKs3ZOu+0Iw5Z6C7xeNTkaXyRn88TB2kUGJhbGgDZsw==", "product"=>{"name"=>"ygu", "price"=>"bouygouyg", "description"=>"ouygu", "inventory"=>"gouygouyg"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "ygu"], ["description", "ouygu"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:28:50.154413"], ["updated_at", "2019-01-16 02:28:50.154413"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products" for ::1 at 2019-01-15 21:31:02 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:31:04 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:31:07 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EsUp9LFAljSRgxpRo/NtIhUXw6VC/40/4XJKQTdhLIPfrC2knPyo7bQh+OKx20cPBAL5zgOfIaYOZYAiiIwHWQ==", "product"=>{"name"=>";jkn", "price"=>"kjnklj", "description"=>"nlknkjl", "inventory"=>"njknlk"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", ";jkn"], ["description", "nlknkjl"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:31:07.937391"], ["updated_at", "2019-01-16 02:31:07.937391"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:32:19 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:32:23 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BcMDNw6bHTYOlTLdEnC/pB7SjT32tCuetkD3IqNwhZ/IqgdnIycj7ys30G4AWJWJD8e3VrfUhwdZVz1BHJ2uRQ==", "product"=>{"name"=>"lkn", "price"=>"lnlk", "description"=>"nlknkl", "inventory"=>"nlkn"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "lkn"], ["description", "nlknkl"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:32:23.144090"], ["updated_at", "2019-01-16 02:32:23.144090"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 29ms (Views: 23.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:33:12 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:33:49 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:33:49 -0500
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:34:33 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:34:33 -0500
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:34:37 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MPK71/FG/5LYIuACXCjZOgsEG170omeTc1/nQUOiExT9m7+H3PrBS/2AArFOAPMXGhEhNbXCywqcSC0i/E84zg==", "product"=>{"name"=>";lkj", "price"=>";lkj", "description"=>"ljk;lj", "inventory"=>";lj;"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", ";lkj"], ["description", "ljk;lj"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:34:37.505083"], ["updated_at", "2019-01-16 02:34:37.505083"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:34:37 -0500
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:34:45 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:34:45 -0500
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:35:40 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:35:40 -0500
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:35:54 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EIWR5+7J5xVJRigwY3doFJg1y+0g9EYQT0ovvLm/uObd7JW3w3XZzGzkyoNxX0I5iSDxhmGU6omgXeXfBlKTPA==", "product"=>{"name"=>"lhl", "price"=>"khlkjhl", "description"=>"kjhlkh", "inventory"=>"khj"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "lhl"], ["description", "kjhlkh"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:35:54.726135"], ["updated_at", "2019-01-16 02:35:54.726135"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:35:54 -0500
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:36:42 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:36:42 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:36:42 -0500
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:36:46 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YyzKlczirWbrdP5cwUPoCM+v3YKyCx5kueKcb+YQ5rWuRc7F4V6Tv87WHO/Ta8Il3rrn6fNrsv1W9VYMWf3Nbw==", "product"=>{"name"=>"hjklh", "price"=>"klhjkhjk", "description"=>"hkh", "inventory"=>"jklhl"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "hjklh"], ["description", "hkh"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:36:46.263726"], ["updated_at", "2019-01-16 02:36:46.263726"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 28.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:36:46 -0500
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:38:15 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-01-15 21:38:16 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:38:16 -0500
+
+
+Started POST "/products" for ::1 at 2019-01-15 21:38:22 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NIoYX4USLDtYq6sAqCY/xMRSCfaOHt2v6DGM4iiq8I354xwPqK4S4n0JSbO6DhXp1Ucznc9+cTYHJkaBl0fbVw==", "product"=>{"name"=>"knjkn", "price"=>"kjnkj", "description"=>"njkn", "inventory"=>"kjnkn"}, "commit"=>"submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "knjkn"], ["description", "njkn"], ["inventory", 0], ["price", 0], ["created_at", "2019-01-16 02:38:22.145268"], ["updated_at", "2019-01-16 02:38:22.145268"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-15 21:38:22 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-01-15 21:38:22 -0500
