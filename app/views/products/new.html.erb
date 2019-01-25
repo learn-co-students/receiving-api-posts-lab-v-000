@@ -26,16 +26,16 @@
   $(function () {
     $('form').submit(function(e) {
       e.preventDefault();
-      let values = $(this).serialize();
-       let posting = $.post('/products', values);
 
-      posting.done(function(data) {
-        // debugger;
-        let product = data;
-        $("#productName").text(product["name"]);
-        $("#productDescription").text(product["description"]);
-        $("#productPrice").text(product["price"]);
-        $("#productInventory").text(product["inventory"]);
+      const values = $(this).serialize();
+       const addProduct = $.post('/products', values);
+
+       addProduct.done(function(data) {
+         const product = data;
+         $("#productName").text("Name:" + product["name"]);
+         $("#productDescription").text("Description:" + product["description"]);
+         $("#productPrice").text("Price:" + product["price"]);
+         $("#productInventory").text("Inventory:" + product["inventory"]);
 
       });
     });
