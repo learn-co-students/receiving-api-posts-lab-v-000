@@ -10,13 +10,10 @@
 <script type="text/javascript" charset="utf-8">
 $(function() {
   $(".js-more").on("click", function() {
-    var id = $(this).data("id");
+    const id = $(this).data("id");
     $.get("/products/" + id + ".json", function(data) {
-      var product = data;
-      var inventoryText = "<strong>Available</strong>";
-      if(product["inventory"] === 0){
-        inventoryText = "<strong>Sold Out</strong>";
-      }
+      const product = data;
+      const inventoryText = (product["inventory"] === 0) ? "Sold Out" : "Available";
       var descriptionText = "<p>" + product["description"] + "</p><p>" + inventoryText + "</p>";
       $("#product-" + id).html(descriptionText);
       var orders = product["orders"];
