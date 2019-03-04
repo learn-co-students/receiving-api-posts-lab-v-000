@@ -18,6 +18,7 @@
 <div id="productResult">
   <h2 id="productName"></h2>
   <p id="productBody"></p>
+  <p id="productMessage"></p>
 </div>
 
 <script type="text/javascript" charset="utf-8">
@@ -29,14 +30,13 @@
       var values = $(this).serialize();
       
       
-      var x = $.product('/products', values);
-
-      
+      var x = $.post('/products', values);
       x.done(function(data){
 
           var post = data;
           $("#productName").text(post["name"]);
           $("#productBody").text(post["description"]);
+           $("#productMessage").text(post["price"])
       });
     });
   });
