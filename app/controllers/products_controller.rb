@@ -1,8 +1,9 @@
+require 'pry'
 class ProductsController < ApplicationController
   def index
     @products = Product.all
   end
-  # 
+  #
   # def inventory
   #   product = Product.find(params[:id])
   #   render plain: product.inventory > 0 ? true : false
@@ -19,6 +20,7 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(product_params)
+    binding.pry
     render json: @product, status: 201
   end
 
