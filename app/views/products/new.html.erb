@@ -26,13 +26,13 @@
       $('form').submit(function (event) {
         event.preventDefault();
 
-        let values = $(this).serialize();
+        var values = $(this).serialize();
 
-        let posting = $.post('/products', values);
+        var posting = $.post('/products', values);
 
         posting.done(function(data) {
           // TODO: Put data on screen for new product
-          let product = data;
+          var product = data;
           $('#productName').text(product["name"]);
           $('#productDescription').text(product["description"]);
           $('#productPrice').text("Price: " + product["price"]);
