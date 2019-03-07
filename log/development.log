@@ -2329,3 +2329,47 @@ Processing by ProductsController#create as */*
   [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
 [active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
 Completed 201 Created in 6ms (Views: 0.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-06 19:23:31 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 186ms (Views: 155.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/store_admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/static.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/store_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-03-06 19:23:31 -0500
+
+
+Started POST "/products" for ::1 at 2019-03-06 19:23:35 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"59R7xkd2RXc/10rvwnloeK9RUtxzCQJost9C0BPm732uLmnyIkWXQ2Q3pPcp5riXxH3y/SrcYEbxGsPcHhFNXg==", "product"=>{"name"=>"product", "price"=>"2", "description"=>"description", "inventory"=>"3"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "product"], ["description", "description"], ["inventory", 3], ["price", 2], ["created_at", "2019-03-07 00:23:35.341991"], ["updated_at", "2019-03-07 00:23:35.341991"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 45]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (104.71ms)
+Completed 201 Created in 168ms (Views: 158.6ms | ActiveRecord: 2.1ms)
