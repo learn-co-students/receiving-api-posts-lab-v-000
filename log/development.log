@@ -1693,3 +1693,200 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-15 09:30:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:30:31 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (687.2ms)
+Completed 200 OK in 1166ms (Views: 1155.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:31:32 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 61ms (Views: 60.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-15 09:31:36 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfkuaSXEQACX+O4BGS2zaKr1TCQafZ0GhmHER2M6nwyXFFaQOKazgzucAU6U56KgbF0UwKdZ6twrn4c8icZ+pw==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2019-03-15 14:31:36.101818"], ["updated_at", "2019-03-15 14:31:36.101818"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/products
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for ::1 at 2019-03-15 09:31:36 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 56ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-15 09:31:48 -0500
+
+ActionController::RoutingError (No route matches [GET] "/posts/new"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/2.5.0/webrick/httpserver.rb:140:in `service'
+  /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/2.5.0/webrick/httpserver.rb:96:in `run'
+  /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/2.5.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.1ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (101.9ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/michaeldilley/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (215.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:31:59 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-15 09:32:13 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7YFRZ4bzzSv4YocSyWGvjTtxNPac715rNtMewNCchMLfbCmem5E+qFQGaF1Eq75F/dlsEiHLKbGbLV27OmBlaQ==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2019-03-15 14:32:13.028074"], ["updated_at", "2019-03-15 14:32:13.028074"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/products
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/products" for ::1 at 2019-03-15 09:32:13 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 91ms (Views: 90.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:32:44 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:36:24 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-15 09:36:35 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cG4ddKpQcSBTVi7zgYwWGTt4MwRmYt+FHaxS8snhQPNCg2WNtzKCo/8ywbwMRgfR/dBr4NtGqF+wUhGJIx2hWA==", "product"=>{"name"=>"Flurbin", "price"=>"3", "description"=>"A cool toy", "inventory"=>"3"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Flurbin"], ["description", "A cool toy"], ["inventory", 3], ["price", 3], ["created_at", "2019-03-15 14:36:35.890324"], ["updated_at", "2019-03-15 14:36:35.890324"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/products
+Completed 200 OK in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/products" for ::1 at 2019-03-15 09:36:35 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 119ms (Views: 117.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:38:50 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 140ms (Views: 124.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products" for ::1 at 2019-03-15 09:39:01 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ScQBtWj6lwIXgITxicY604iCVQazc9DMoZPB5yI8y9J7KXlMdZhkgbvka74EDCsbTioN4g5XpxYMbYKcyMAqeQ==", "product"=>{"name"=>"Flurbin", "price"=>"3", "description"=>"a cool toy", "inventory"=>"5"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Flurbin"], ["description", "a cool toy"], ["inventory", 5], ["price", 3], ["created_at", "2019-03-15 14:39:01.525483"], ["updated_at", "2019-03-15 14:39:01.525483"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (66.29ms)
+Completed 201 Created in 131ms (Views: 124.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:40:32 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:40:37 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-15 09:40:52 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePpB26RQy0qf+SrYNACp5JD/8UC9pH4ZmIi7vvHe2JdKFzkiuTI4yTOdxZe5yrgsVleppACACcM1dvjFGyI5PA==", "product"=>{"name"=>"Flurbin2", "price"=>"3", "description"=>"a cool toy", "inventory"=>"6"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Flurbin2"], ["description", "a cool toy"], ["inventory", 6], ["price", 3], ["created_at", "2019-03-15 14:40:52.464886"], ["updated_at", "2019-03-15 14:40:52.464886"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 26]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.85ms)
+Completed 201 Created in 8ms (Views: 2.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:43:30 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-15 09:43:44 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2egQPGVa8kVbByptjQfKHKMuX/Q5fFf8S2gAgKHyVlHrBWjFeDgBxvdjxSIAzdvUZYYHEIRYICbmlkP7Sw63+g==", "product"=>{"name"=>"Flurbin23", "price"=>"3", "description"=>"a cool new toy", "inventory"=>"6"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Flurbin23"], ["description", "a cool new toy"], ["inventory", 6], ["price", 3], ["created_at", "2019-03-15 14:43:44.848215"], ["updated_at", "2019-03-15 14:43:44.848215"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 27]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.42ms)
+Completed 201 Created in 9ms (Views: 2.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-15 09:44:12 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
