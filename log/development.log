@@ -1693,3 +1693,97 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" ASC LIMIT 1[0m
+
+
+Started GET "/products/new" for ::1 at 2019-03-23 19:26:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (593.8ms)
+Completed 200 OK in 1067ms (Views: 1043.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2019-03-23 19:26:59 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZiPSxBDeuPRJ7P0W3HiUq38lOxwyExDJiHiv7P/GYlb6RD1WR2thMccGQzB9sTxl49Sg1TqXdqTVQwO16GbfYg==", "product"=>{"name"=>"nameee", "price"=>"22222", "description"=>"good stuff", "inventory"=>"14444"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "nameee"], ["description", "good stuff"], ["inventory", 14444], ["price", 22222], ["created_at", "2019-03-23 23:26:59.941717"], ["updated_at", "2019-03-23 23:26:59.941717"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 17ms (Views: 13.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-23 19:29:02 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-23 19:29:15 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"llGzvNPUcI9YTqxG/t2YNpI5oQ5GU+MJXXg/t4SdIOIKNlwuhGGpStakEmBfFDD4Dsg6x07XhWQAQ5Pukz2d1g==", "product"=>{"name"=>"trying out de", "price"=>"12222", "description"=>"asflj;wefjlj", "inventory"=>"56"}}
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "trying out de"], ["description", "asflj;wefjlj"], ["inventory", 56], ["price", 12222], ["created_at", "2019-03-23 23:29:15.202269"], ["updated_at", "2019-03-23 23:29:15.202269"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 9ms (Views: 0.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-23 19:29:20 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-23 19:29:36 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-23 19:29:55 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-23 19:30:14 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wWkdqKfq6yROyYmbjUar+9Tyjz7g+JvpTSs4Rv7ue9VdDvI68F8y4cAjN70sjwM1SAMU9+h8/YQQEJQf6U7G4Q==", "product"=>{"name"=>"debbuggerr", "price"=>"56", "description"=>"graat", "inventory"=>"89"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "debbuggerr"], ["description", "graat"], ["inventory", 89], ["price", 56], ["created_at", "2019-03-23 23:30:14.310686"], ["updated_at", "2019-03-23 23:30:14.310686"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 8ms (Views: 0.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-23 19:33:57 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 86ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-23 19:34:09 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qBYEdrirXPaHUxMdo1FrU9We6I800BqDYb8kZTuCEzc0cevk7x6FMwm5rTsCmMOdSW9zRjxUfO48hIg8LCKuAw==", "product"=>{"name"=>"van", "price"=>"22", "description"=>"155", "inventory"=>"5"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "van"], ["description", "155"], ["inventory", 5], ["price", 22], ["created_at", "2019-03-23 23:34:09.653838"], ["updated_at", "2019-03-23 23:34:09.653838"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 4ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/new" for ::1 at 2019-03-23 19:36:55 -0400
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-03-23 19:37:24 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xG+S7lWoZAoDLwqMVWEZ8XhUmkpwsk4LEigdaczbGJRYCH18Ah29z43FtKr0qLE/5KUBg3g2KGZPE7Ew23uloA==", "product"=>{"name"=>"trying", "price"=>"4", "description"=>"this noowww", "inventory"=>"67"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "trying"], ["description", "this noowww"], ["inventory", 67], ["price", 4], ["created_at", "2019-03-23 23:37:24.084728"], ["updated_at", "2019-03-23 23:37:24.084728"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 8ms (Views: 0.7ms | ActiveRecord: 3.3ms)
