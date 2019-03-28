@@ -25,9 +25,13 @@
       //prevent form from submitting the default way
       event.preventDefault();
       let values = $(this).serialize();
+<<<<<<< HEAD
        
        let promise = $.post('/products', values)
        promise.done(function(data) {
+=======
+       $.post('/products', values, function(data) {
+>>>>>>> f6996d52fbf4fc52c955f6edf0783731e82cee0b
            console.log(data);
            $("#productName").text(data["name"]);
            $("#productPrice").text("Price: " + data["price"]);
