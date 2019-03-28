@@ -14,7 +14,7 @@ RSpec.describe "Products", type: :feature do
       fill_in "Name", with: "New Product"
       fill_in "Price", with: "2"
       fill_in "Description", with: "This is a very nice product!"
-      click_on "submit"
+      click_submit "submit"
       expect(page.current_path).to eq new_product_path
       expect(page).to have_content "New Product"
       expect(page).to have_content "2"
