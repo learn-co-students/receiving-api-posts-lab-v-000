@@ -17,10 +17,10 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def create
-    Product.create(product_params)
-    redirect_to products_path
-  end
+   def create
+    @product = Product.create(product_params)
+    render json: @product, status: 201
+  end 
 
   def show
     @product = Product.find(params[:id])
