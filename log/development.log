@@ -1693,3 +1693,411 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-04 10:21:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 309ms (Views: 301.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-04-04 10:21:24 -0700
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:21:28 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (378.4ms)
+Completed 200 OK in 388ms (Views: 388.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:28:56 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:29:29 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vUmdtoTtlrtqBMii9fHGAZ7oGBU0Q2cN/2S5a68RnIF4qCDCi6eLWi7KxRK8EDac5FGYdIUvYXu2PaA20wOvcw==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"kirkland brand water bottles 40 for $4.99 per crate", "inventory"=>"39"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "water bottle"], ["description", "kirkland brand water bottles 40 for $4.99 per crate"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 17:29:29.680663"], ["updated_at", "2019-04-04 17:29:29.680663"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `rrender' for #<ProductsController:0x00007feeadfd74a8>
+Did you mean?  render):
+  app/controllers/products_controller.rb:22:in `create'
+
+
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (17.4ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:29:48 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vUmdtoTtlrtqBMii9fHGAZ7oGBU0Q2cN/2S5a68RnIF4qCDCi6eLWi7KxRK8EDac5FGYdIUvYXu2PaA20wOvcw==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"kirkland brand water bottles 40 for $4.99 per crate", "inventory"=>"39"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "kirkland brand water bottles 40 for $4.99 per crate"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 17:29:48.723931"], ["updated_at", "2019-04-04 17:29:48.723931"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 18ms (Views: 9.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:30:31 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:31:35 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"65etwYmN62Cbc34wZKmGcsLaV2ilvEsAnC5pIiipt14udhC1hsf2gd+9c4AtSHbvuGPXCRTQTXbVd3B/VLuErA==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"kirkland brand per crate value 4.99$ for 40 16oz bottles", "inventory"=>"40"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "water bottle"], ["description", "kirkland brand per crate value 4.99$ for 40 16oz bottles"], ["inventory", 40], ["price", 0], ["created_at", "2019-04-04 17:31:35.657608"], ["updated_at", "2019-04-04 17:31:35.657608"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.03ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:31:56 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:32:07 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HtU+PyHFGn1DYoXA55oYYSpa7CqdHYsmaUuq950VUqbbNINLLo8HnAesiHCue+j8UONsSyxxjVAgErOq4QdhVA==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"kirkland brand per crate value 4.99$ for 40 16oz bottles", "inventory"=>"49"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "kirkland brand per crate value 4.99$ for 40 16oz bottles"], ["inventory", 49], ["price", 0], ["created_at", "2019-04-04 17:32:07.903306"], ["updated_at", "2019-04-04 17:32:07.903306"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.03ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:32:44 -0700
+Processing by ProductsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  app/controllers/products_controller.rb:36:in `product_params'
+  app/controllers/products_controller.rb:21:in `create'
+
+
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.3ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.4ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (10.2ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:34:35 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HtU+PyHFGn1DYoXA55oYYSpa7CqdHYsmaUuq950VUqbbNINLLo8HnAesiHCue+j8UONsSyxxjVAgErOq4QdhVA==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"kirkland brand per crate value 4.99$ for 40 16oz bottles", "inventory"=>"49"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "water bottle"], ["description", "kirkland brand per crate value 4.99$ for 40 16oz bottles"], ["inventory", 49], ["price", 0], ["created_at", "2019-04-04 17:34:35.522688"], ["updated_at", "2019-04-04 17:34:35.522688"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:39:05 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:39:08 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S72AasrK/j5KMCptAtBvy3ebqqtg9cXxuhT4GDECF5eOXD0exYDj3w7+J91LMZ9WDSIqytGZw4fzTeFFTRAkZQ==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2019-04-04 17:39:08.441835"], ["updated_at", "2019-04-04 17:39:08.441835"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.03ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:39:34 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S72AasrK/j5KMCptAtBvy3ebqqtg9cXxuhT4GDECF5eOXD0exYDj3w7+J91LMZ9WDSIqytGZw4fzTeFFTRAkZQ==", "product"=>{"name"=>"dfa", "price"=>"fads", "description"=>"dsaf", "inventory"=>"dasf"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "dfa"], ["description", "dsaf"], ["inventory", 0], ["price", 0], ["created_at", "2019-04-04 17:39:34.206049"], ["updated_at", "2019-04-04 17:39:34.206049"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 4ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:40:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (436.1ms)
+Completed 200 OK in 596ms (Views: 584.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:40:14 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6JG/idsJG2Y1P32t1OHOkr+uDDMu/XIxbjqiKMI3Z6EtcAL91EMGh3HxcB2dAD4PxReMUp+RdEcnY7t1viVUUw==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"kirkland brand per crate value 4.99$ for 40 16oz bottles", "inventory"=>"39"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "kirkland brand per crate value 4.99$ for 40 16oz bottles"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 17:40:14.519742"], ["updated_at", "2019-04-04 17:40:14.519742"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 11ms (Views: 8.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:51:07 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:51:26 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mwm4Ncry5LQq4k9zJ5GPdIz2V4N8QZDJQycvQVXXUEZe6AVBxbj5VW4sQsNucH/p9k/X4s0tlr8KfjYcKcVjtA==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"kirlansdf     dfdkjfa d adfadfk jfdskl", "inventory"=>"49"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "water bottle"], ["description", "kirlansdf     dfdkjfa d adfadfk jfdskl"], ["inventory", 49], ["price", 0], ["created_at", "2019-04-04 17:51:26.015391"], ["updated_at", "2019-04-04 17:51:26.015391"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:52:29 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:52:36 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:52:37 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:52:41 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GdeqGCsgM1JRezoTu7ZDiw8zjLbIN3TeNDjqBRqHRkLcNhdsJGousxW1N6PyV7MWdYoM13lbcqh9YfNYZpV1sA==", "product"=>{"name"=>"", "price"=>"", "description"=>"", "inventory"=>""}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["description", ""], ["created_at", "2019-04-04 17:52:41.130960"], ["updated_at", "2019-04-04 17:52:41.130960"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:52:58 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GdeqGCsgM1JRezoTu7ZDiw8zjLbIN3TeNDjqBRqHRkLcNhdsJGousxW1N6PyV7MWdYoM13lbcqh9YfNYZpV1sA==", "product"=>{"name"=>"afds", "price"=>"dafsf", "description"=>"asdf", "inventory"=>"asdfs"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "afds"], ["description", "asdf"], ["inventory", 0], ["price", 0], ["created_at", "2019-04-04 17:52:58.827478"], ["updated_at", "2019-04-04 17:52:58.827478"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.03ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 10:56:09 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 10:56:19 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fk3ebCIQTnKD3QE537gyODMvAHpDXngXMl0pXZGYSC67rGMYLVpTk8cTDImWWcKlSZaAG/IyfmF7BDAA7Yp73A==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"dfasdf d fgad asdf ads", "inventory"=>"39"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "dfasdf d fgad asdf ads"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 17:56:19.184134"], ["updated_at", "2019-04-04 17:56:19.184134"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.03ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-04-04 11:02:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/posts/new"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/tahseensiddiqui/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/tahseensiddiqui/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/tahseensiddiqui/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.9ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.6ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.2ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (589.2ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (610.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-04-04 11:02:31 -0700
+
+ActionController::RoutingError (No route matches [POST] "/posts"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/tahseensiddiqui/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/tahseensiddiqui/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/tahseensiddiqui/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 11:02:39 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 218ms (Views: 208.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 11:03:08 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsc40NY3VvnefWKDPqaoWDhd6p0C3x5m+PoD63qncuULJoWk2X1LGJqzbzN3R1jFQuRq/LOzGBCxoxq2BrVBFw==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"dfasdfkla'sd", "inventory"=>"39"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "dfasdfkla'sd"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 18:03:08.259210"], ["updated_at", "2019-04-04 18:03:08.259210"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 201 Created in 14ms (Views: 10.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 11:05:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (586.5ms)
+Completed 200 OK in 793ms (Views: 779.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 11:06:40 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 11:07:46 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 11:07:46 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"djU/SfHeqwUYRkKh9Ni7sEM0GZqEOsuxEarRDpA9Aqaz1II9/pS25FyITxG9OUstOY2Z+zVWzcdY88hT7C8xVA==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"dsfa  fgas ", "inventory"=>"39"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "dsfa  fgas "], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 18:07:46.440772"], ["updated_at", "2019-04-04 18:07:46.440772"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 18ms (Views: 12.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 11:08:18 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FiiG6QbuyRLtG2ColyO+6CG+JCHTweHOxaeLUcgiT6zTyTudCaTU86nVbRjewk51WwekQGKt57iM/pIMtDB8Xg==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"asdf", "inventory"=>"39"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "water bottle"], ["description", "asdf"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 18:08:18.859484"], ["updated_at", "2019-04-04 18:08:18.859484"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 11:09:09 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 11:09:18 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0i1wWROQZkO3ExUBEJ8cgIrsFXUYVotAx87FJSrR580XzM0tHNp7ovPdGLFZfuwd8FWVFKk6jTaOl9x4VsPUPw==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"dsfa dsafad", "inventory"=>"39"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "dsfa dsafad"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 18:09:18.176939"], ["updated_at", "2019-04-04 18:09:18.176939"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 11:10:39 -0700
+Processing by ProductsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  app/controllers/products_controller.rb:36:in `product_params'
+  app/controllers/products_controller.rb:21:in `create'
+
+
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.5ms)
+  Rendered /Users/tahseensiddiqui/.rvm/gems/ruby-2.6.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (11.7ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-04 11:12:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (567.6ms)
+Completed 200 OK in 765ms (Views: 749.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-04 11:13:09 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QBua+HxwJUULjj6Y8AVtc+zCd+YkJYU+QRThXYtyx7uF+ieMczo4pE9AMyi55J3ulnv3h5VJg0gITfgA92D0SQ==", "product"=>{"name"=>"water bottle", "price"=>".25", "description"=>"dfas asdfjak", "inventory"=>"39"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["description", "dfas asdfjak"], ["inventory", 39], ["price", 0], ["created_at", "2019-04-04 18:13:09.282005"], ["updated_at", "2019-04-04 18:13:09.282005"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 38]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (44.61ms)
+Completed 201 Created in 75ms (Views: 70.5ms | ActiveRecord: 2.1ms)
