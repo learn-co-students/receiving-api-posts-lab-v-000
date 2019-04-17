@@ -1693,3 +1693,146 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2016-11-16 10:33:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 905ms (Views: 867.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/12.json" for ::1 at 2016-11-16 10:33:18 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 12]]
+Completed 200 OK in 153ms (Views: 64.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:33:22 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (751.9ms)
+Completed 200 OK in 777ms (Views: 776.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:35:21 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:37:01 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2016-11-16 10:37:29 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MwRLkr3oX5XRSuW1gfxhz3B5q5YHKlrdjHdzB1DpKNm5cBXos/YLkm3qq16a+NthycNzCSPTtPV5XEoGlQNNvQ==", "product"=>{"name"=>"PINARELLO ROKH ULTEGRA COMPLETE ROAD BIKE - 2016", "price"=>"3400", "description"=>"For all the attention heaped on its flagship grand tour models, Pinarello has spent as much — if not more — time trying to solve the issues confronting cyclists who tackle the northern classics. After all, the grand tour recipe is surprisingly simple: light and efficient for attacks in the high mountains. Classics-minded rides like the ROKH Ultegra Complete Road Bike have to deal with short, punchy climbs, twisting roads, and horrific inclement conditions — all on a stage defined by the infamous stones of Northern France and Flanders. This requires an efficient platform that can handle the abuse of Napoleonic-era cobblestone roads, and everything from the full Shimano Ultegra drivetrain to the frame's forgiving-yet-stiffly efficient ride is designed to do just that.", "inventory"=>"3"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "PINARELLO ROKH ULTEGRA COMPLETE ROAD BIKE - 2016"], ["description", "For all the attention heaped on its flagship grand tour models, Pinarello has spent as much — if not more — time trying to solve the issues confronting cyclists who tackle the northern classics. After all, the grand tour recipe is surprisingly simple: light and efficient for attacks in the high mountains. Classics-minded rides like the ROKH Ultegra Complete Road Bike have to deal with short, punchy climbs, twisting roads, and horrific inclement conditions — all on a stage defined by the infamous stones of Northern France and Flanders. This requires an efficient platform that can handle the abuse of Napoleonic-era cobblestone roads, and everything from the full Shimano Ultegra drivetrain to the frame's forgiving-yet-stiffly efficient ride is designed to do just that."], ["inventory", 3], ["price", 3400], ["created_at", "2016-11-16 15:37:29.290123"], ["updated_at", "2016-11-16 15:37:29.290123"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 8ms (Views: 2.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products/" for ::1 at 2016-11-16 10:37:38 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/22.json" for ::1 at 2016-11-16 10:37:41 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 22]]
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:38:46 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 28.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for ::1 at 2016-11-16 10:39:24 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1aA0K2WlOblbLhyfR6pOtmzKYKrG00w509di0j7TN+Jf1GpRa7ttvueOUnRcrvQY1XC4NeIqohEm/FvT+zlShg==", "product"=>{"name"=>"SIGNET BAG IN ITALIAN LEATHER", "price"=>"128", "description"=>"\r\nPRODUCT DETAILS\r\nIntroducing your new fall bag (emphasis on the word \"your\"). Our Signet bag features luxurious Italian leather with custom-developed hardware, plus a colorful leather key fob for a little extra flair. More ways to make it your own? Our customizable bag tags and coin purses, sold separately, or a monogram featuring your initials or something fun. See what we're carrying in ours.", "inventory"=>"25"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "SIGNET BAG IN ITALIAN LEATHER"], ["description", "\r\nPRODUCT DETAILS\r\nIntroducing your new fall bag (emphasis on the word \"your\"). Our Signet bag features luxurious Italian leather with custom-developed hardware, plus a colorful leather key fob for a little extra flair. More ways to make it your own? Our customizable bag tags and coin purses, sold separately, or a monogram featuring your initials or something fun. See what we're carrying in ours."], ["inventory", 25], ["price", 128], ["created_at", "2016-11-16 15:39:24.202117"], ["updated_at", "2016-11-16 15:39:24.202117"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 8ms (Views: 2.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/products/" for ::1 at 2016-11-16 10:39:33 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/23.json" for ::1 at 2016-11-16 10:39:36 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"23"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 23]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 23]]
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/20.json" for ::1 at 2016-11-16 10:39:55 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"20"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 20]]
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "ordered_products" ON "products"."id" = "ordered_products"."product_id" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 11]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" INNER JOIN "ordered_products" ON "products"."id" = "ordered_products"."product_id" WHERE "ordered_products"."order_id" = ?  [["order_id", 16]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "ordered_products" ON "products"."id" = "ordered_products"."product_id" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 17]]
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:42:51 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:43:20 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:43:32 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2016-11-16 10:46:36 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T4jaAghkqS0TS3F+cT2oKoqpbtpUQ+CrBCNVWQ8SVG/F/IR4Bnr9Kq/rP5VqORKEMxO2RXC6DoPxCGxYyvgxCw==", "product"=>{"name"=>"CASTELLI ELEMENTO 2 7X(AIR) JACKET", "price"=>"399", "description"=>"In warm weather, you can throw on any old jersey and hit the road, confident that you'll stay warm and happy. Winter makes things a little tricker. You want to be warm, but not sweat, because sweat will quickly turn to ice, and you want to layer up, but you don't want to look and feel like a marshmallow man. It's a damn near intractable problem, but Castelli's Elemento 2 7x(AIR) Men's Jacket offers up an elegant, slim-fitting solution.", "inventory"=>"13"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "CASTELLI ELEMENTO 2 7X(AIR) JACKET"], ["description", "In warm weather, you can throw on any old jersey and hit the road, confident that you'll stay warm and happy. Winter makes things a little tricker. You want to be warm, but not sweat, because sweat will quickly turn to ice, and you want to layer up, but you don't want to look and feel like a marshmallow man. It's a damn near intractable problem, but Castelli's Elemento 2 7x(AIR) Men's Jacket offers up an elegant, slim-fitting solution."], ["inventory", 13], ["price", 399], ["created_at", "2016-11-16 15:46:36.752891"], ["updated_at", "2016-11-16 15:46:36.752891"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 24]]
+Completed 201 Created in 32ms (Views: 15.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/products/new" for ::1 at 2016-11-16 10:47:06 -0500
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2016-11-16 10:47:36 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"owEmsvnjMJsdOeaeiIKoJzit1IrYwnD7iqgAOsutvC8pdXjI9/1knKGZqHWThhKJgRcMFfw7ntN/gzk7DkfZSw==", "product"=>{"name"=>"KUAT SHERPA 2.0 BIKE RACK", "price"=>"489", "description"=>"Tube damage from over-zealous clamping, flying road debris, quick-release skewers molesting frames—the dangers of auto-borne bikes are rightly feared. Kuat's Sherpa 2.0 Bike Rack addresses many of our rack-related reservations by securing the bikes in sleds without wrenching down on the top tube and leaving an expanded 14in between each machine. The sleds are reinforced to support bikes weighing up to 40lb, and the foot-actuated pivot lever lets you unfold the rack when your upstairs appendages are occupied with bikes or laden with trip supplies.", "inventory"=>"17"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "KUAT SHERPA 2.0 BIKE RACK"], ["description", "Tube damage from over-zealous clamping, flying road debris, quick-release skewers molesting frames—the dangers of auto-borne bikes are rightly feared. Kuat's Sherpa 2.0 Bike Rack addresses many of our rack-related reservations by securing the bikes in sleds without wrenching down on the top tube and leaving an expanded 14in between each machine. The sleds are reinforced to support bikes weighing up to 40lb, and the foot-actuated pivot lever lets you unfold the rack when your upstairs appendages are occupied with bikes or laden with trip supplies."], ["inventory", 17], ["price", 489], ["created_at", "2016-11-16 15:47:36.939921"], ["updated_at", "2016-11-16 15:47:36.939921"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+Completed 201 Created in 8ms (Views: 2.8ms | ActiveRecord: 1.7ms)
