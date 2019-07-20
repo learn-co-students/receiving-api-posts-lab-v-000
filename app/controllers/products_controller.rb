@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    respond_to do | format | 
+	format.html {render :index }
+	format.json {render json: @products.to_json } 
+    end 
   end
 
   def inventory
@@ -18,8 +22,10 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    redirect_to products_path
+    created_product = Product.create!(product_params)
+    #redirect_to products_path
+   #redirect_to new_product_path
+   render json: created_product.as_json
   end
 
   def show
