@@ -43,6 +43,7 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda'
   gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
 group :development do
