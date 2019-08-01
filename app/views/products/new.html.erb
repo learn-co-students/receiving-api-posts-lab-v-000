@@ -11,9 +11,9 @@
   <br />
   <%= f.label :inventory %>
   <%= f.text_field :inventory %>
-
+  <div class="actions">
     <%= f.submit "submit" %>
-
+  </div>
 <% end %>
 
 <div id="productResult">
@@ -35,10 +35,9 @@
       var posting = $.post('/products', values);
 
       //Use the posting object to specify what should happen when the AJAX request is done.
-      posting.done(function(data) {
+      posting.done(function(data, error) {
       //The jQuery post() method returns a jqXHR object, which implement the Promise interface, used for deferred or asynchronous operations.
         var product = data;
-        debugger
         $("#productName").text(product["name"]);
         $("#productPrice").text(product["price"]);
         $("#productDescription").text(product["description"]);
@@ -46,5 +45,4 @@
       });
     });
   });
-
 </script>
