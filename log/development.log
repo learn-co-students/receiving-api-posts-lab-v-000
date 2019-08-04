@@ -1693,3 +1693,127 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+Started GET "/" for 127.0.0.1 at 2019-08-04 14:05:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/stefclaus/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/stefclaus/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 36ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-04 14:05:13 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/stefclaus/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/stefclaus/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2019-08-04 14:05:17 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 488ms (Views: 469.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:05:18 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (1107.5ms)
+Completed 200 OK in 1126ms (Views: 1123.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:06:51 -0400
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:07:01 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 42.8ms | ActiveRecord: 1.2ms)
+
+
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 38ms (Views: 19.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:08:48 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:12:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (966.1ms)
+Completed 200 OK in 1188ms (Views: 1154.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-08-04 14:12:36 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVgStpMXuX5l8zqpuJZgNtFblRMZR86m0ZsXUi2DOOrEYQiyAyrWRkLTDZvypGvbOF8asIqmdc3Sfc70PQce1w==", "product"=>{"name"=>"Rice wine vinegar", "price"=>"3", "description"=>"good", "inventory"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rice wine vinegar"], ["price", 3], ["created_at", "2019-08-04 18:12:36.837445"], ["updated_at", "2019-08-04 18:12:36.837445"], ["inventory", 1], ["description", "good"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.17ms)
+Completed 201 Created in 29ms (Views: 21.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:13:54 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-08-04 14:14:01 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7VZkI+FNVHTAwBqPOM5GtXhjQQj1fgomcuHj/zrgu3aYb34ncXA7TOfgLb1y/E1YkWfOq2afsU1xBzpZKmSdSw==", "product"=>{"name"=>"Rice wine vinegar", "price"=>"3", "description"=>"good", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rice wine vinegar"], ["price", 3], ["created_at", "2019-08-04 18:14:01.048746"], ["updated_at", "2019-08-04 18:14:01.048746"], ["inventory", 1], ["description", "good"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.14ms)
+Completed 201 Created in 10ms (Views: 1.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:18:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (1153.0ms)
+Completed 200 OK in 1400ms (Views: 1360.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-08-04 14:19:02 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0D+XuPXLKTamxi3GZesh5UNjgR05IN3ECUJDXqzR8jmlBo28ZfZGDoHmGvQv2SoIqmcOvqrBZq8KpJr4vFXUBA==", "product"=>{"name"=>"Rice wine vinegar", "price"=>"3", "description"=>"we", "inventory"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rice wine vinegar"], ["price", 3], ["created_at", "2019-08-04 18:19:02.782015"], ["updated_at", "2019-08-04 18:19:02.782015"], ["inventory", 1], ["description", "we"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.14ms)
+Completed 200 OK in 31ms (Views: 22.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-04 14:19:56 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 137ms (Views: 108.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-08-04 14:20:02 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EIAyjnnO5s0RjM1Ewofi4wuCkd43XRo41gFW1WBv4HhluSiK6fOJ9Tas+naItekO4oYefaS8oVPV549zcOvGRQ==", "product"=>{"name"=>"Rice wine vinegar", "price"=>"3", "description"=>"sdf", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rice wine vinegar"], ["price", 3], ["created_at", "2019-08-04 18:20:02.033079"], ["updated_at", "2019-08-04 18:20:02.033079"], ["inventory", 1], ["description", "sdf"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 25]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (60.88ms)
+Completed 200 OK in 111ms (Views: 104.9ms | ActiveRecord: 3.3ms)
+
+
