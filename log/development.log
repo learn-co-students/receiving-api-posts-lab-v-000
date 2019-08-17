@@ -1828,3 +1828,36 @@ Processing by ProductsController#show as JSON
 Completed 200 OK in 23ms (Views: 14.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/products/13.json" for 127.0.0.1 at 2019-08-17 08:03:37 -0700
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 13]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (104.03ms)
+Completed 200 OK in 181ms (Views: 114.6ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-17 08:03:46 -0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (124.8ms)
+Completed 200 OK in 445ms (Views: 440.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-08-17 08:12:14 -0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 455ms (Views: 300.0ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-08-17 08:12:34 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B6mIaxzIhyqyd+A/lnx71l+0K/IUCOXqulcIYO+qH84S+HAEeh8PVDYCTN7vcZLpcduGEe/HKaI9QhCQBjUKbw==", "product"=>{"name"=>"Test 1", "price"=>"1", "description"=>"Test", "inventory"=>"0"}}
+  [1m[35m (4.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (29.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Test 1"], ["price", 1], ["created_at", "2019-08-17 15:12:34.202100"], ["updated_at", "2019-08-17 15:12:34.202100"], ["inventory", 0], ["description", "Test"]]
+  [1m[35m (263.3ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.16ms)
+Completed 200 OK in 400ms (Views: 53.9ms | ActiveRecord: 297.5ms)
+
+

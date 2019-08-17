@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     #Original
     #redirect_to products_path
     #Changed to:
-    render json: @product, status: 201
+    render json: @product#, status: 201
   end
 
   def show

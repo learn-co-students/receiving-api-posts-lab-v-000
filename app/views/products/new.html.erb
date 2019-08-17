@@ -32,7 +32,7 @@
      //prevent form from submitting the default way
      event.preventDefault();
      var values = $(this).serialize();
-     var producing = $.product('/products', values);
+     var producing = $.post('/products', values);
      producing.done(function(data) {
        var product = data;
        $("#productName").text(product["name"]);
