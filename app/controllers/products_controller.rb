@@ -18,11 +18,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
+    @product = Product.create(product_params)
     #Original
     #redirect_to products_path
     #Changed to:
-    render json: @product#, status: 201
+    render json: @product, status: 201
   end
 
   def show
@@ -30,8 +30,6 @@ class ProductsController < ApplicationController
       respond_to do |format|
         format.html { render :show }
         format.json { render json: @product }
-      # format.html {render :show}
-      # format.json { render json: @product.to_json(only: [:id, :name, :description, :price, :inventory])} 
     end
   end
   
