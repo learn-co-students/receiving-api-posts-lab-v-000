@@ -1693,3 +1693,36 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+Started GET "/" for 127.0.0.1 at 2019-09-06 10:06:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/learn/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/learn/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 31ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-09-06 10:06:08 -0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (1754.7ms)
+Completed 200 OK in 2253ms (Views: 2215.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-09-06 10:06:22 -0700
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LsNS1J7+EgK2t7qMWYqmpb7BNtQJDiSiU1TJHkYRzZamj+XdUea61cG/UECqUWZJL2pihLjN8ST2tKiDHeE3kA==", "product"=>{"name"=>"Mountain Dew", "price"=>"1.00", "description"=>"Tasty", "inventory"=>"69"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Mountain Dew"], ["price", 1], ["created_at", "2019-09-06 17:06:22.312017"], ["updated_at", "2019-09-06 17:06:22.312017"], ["inventory", 69], ["description", "Tasty"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 201 Created in 31ms (Views: 16.7ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-09-06 10:07:15 -0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
