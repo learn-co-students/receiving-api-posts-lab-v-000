@@ -1693,3 +1693,264 @@ Processing by ProductsController#create as */*
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 21]]
 Completed 201 Created in 75ms (Views: 66.6ms | ActiveRecord: 2.4ms)
+Started POST "/posts" for 127.0.0.1 at 2020-03-29 16:52:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/posts"):
+  
+actionpack (5.0.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (11.1ms)
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.7ms)
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (23.0ms)
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (158.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.9ms)
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__on_ala__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___1176810334699720269_70202545967380 at /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (1454.4ms)
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/RonSala/.rvm/gems/ruby-2.6.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (1566.8ms)
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 16:52:34 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 684ms (Views: 635.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 16:53:10 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W3yBi4v8KB9nwW+IKKO6CL9ydUiPzF/4FHyWFoL0Ya1XClnonxpptwkJvcMUd2AVT+gdem8Zuok2Fj0Z2jgfYA==", "product"=>{"name"=>"Prairie Squid ", "price"=>"1000", "description"=>"Yoo no", "inventory"=>"23"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 1000], ["created_at", "2020-03-29 20:53:10.938858"], ["updated_at", "2020-03-29 20:53:10.938858"], ["inventory", 23], ["description", "Yoo no"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.11ms)
+Completed 201 Created in 80ms (Views: 70.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 16:53:53 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 16:55:58 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wUxN3dHELNQFNjbGU9Z9KV7zVsqzHSb7tIdQHNy5jxfNOpW+xSJtfGv+5I1vAqc0rmk++FPIw4qW7fsThHXx2g==", "product"=>{"name"=>"Prairie Squid ", "price"=>"1000", "description"=>"uoo", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (102.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 1000], ["created_at", "2020-03-29 20:55:58.529671"], ["updated_at", "2020-03-29 20:55:58.529671"], ["inventory", 1], ["description", "uoo"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 117ms (Views: 0.9ms | ActiveRecord: 104.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 16:56:11 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 88ms (Views: 84.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 16:57:22 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 168ms (Views: 165.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 16:57:23 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2xT4yEaRYswtLdpp5DgY8EJNQ50MS5j+F363Ecvq4cXGouANfwEI158ZSKbRDp+MZNdPJTkyxLaN1HTH+PVSg==", "product"=>{"name"=>"Prairie Squid ", "price"=>"100000", "description"=>"faffljf", "inventory"=>"1"}}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 100000], ["created_at", "2020-03-29 20:57:23.269206"], ["updated_at", "2020-03-29 20:57:23.269206"], ["inventory", 1], ["description", "faffljf"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (6.11ms)
+Completed 201 Created in 31ms (Views: 15.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 16:58:31 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TbVVn7CZ9x29P0JbwcrSMo0PpL55zBp2qbUlHrlsKfZBw438pH+2tdP3kBD9HggvfZXMjJkZ/weL344R4aBXOw==", "product"=>{"name"=>"Product 12", "price"=>"1000", "description"=>"this it is", "inventory"=>"3"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Product 12"], ["price", 1000], ["created_at", "2020-03-29 20:58:31.055096"], ["updated_at", "2020-03-29 20:58:31.055096"], ["inventory", 3], ["description", "this it is"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 20ms (Views: 0.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:00:29 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 54ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:00:50 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zBGmR8t/iCpoV6yj0VyI4WE4rQjxQUKnacnLiFCLk5fAZ34k35nJggaffujtiFL8kaLFOhGUp9ZLo2CHCEftWg==", "product"=>{"name"=>"Prairie Squid ", "price"=>"100000", "description"=>"fafjd", "inventory"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 100000], ["created_at", "2020-03-29 21:00:50.064132"], ["updated_at", "2020-03-29 21:00:50.064132"], ["inventory", 1], ["description", "fafjd"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:10:42 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:11:01 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7UGEImNjHsjaqGa5Zd8kNSdc6OyNt6O1oyDQr9+xt5bhN1xBd4VfYLRgtPJZC/4o18aA3m1iRsSBSnugh33JWw==", "product"=>{"name"=>"pj", "price"=>"234", "description"=>"jfldajf", "inventory"=>"2"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "pj"], ["price", 234], ["created_at", "2020-03-29 21:11:01.983053"], ["updated_at", "2020-03-29 21:11:01.983053"], ["inventory", 2], ["description", "jfldajf"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.3ms)
+Completed 201 Created in 18ms (Views: 0.9ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:11:15 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 114ms (Views: 111.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:13:37 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+WzTr21LNWRlxUSCsV8ThdnZP+k5IVK0lbHlQ7Bao831GgvMea10zAsNlsmNi8mYKUNX29n0t8W3205M6JbdAA==", "product"=>{"name"=>"Prairie Squid ", "price"=>"1000", "description"=>"jjfdjf", "inventory"=>"23"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 1000], ["created_at", "2020-03-29 21:13:37.262434"], ["updated_at", "2020-03-29 21:13:37.262434"], ["inventory", 23], ["description", "jjfdjf"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 201 Created in 10ms (Views: 0.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:15:57 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 184ms (Views: 178.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:16:13 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"muHcztRm+gLDg4NVIa0Tqjcj0aHKbuPMMWTnlTd4Hl2WlwStwIC7qq1LUR4decm3x7m5kyq7Br0TDkyab7RgkA==", "product"=>{"name"=>"Prairie Squid ", "price"=>"100000", "description"=>"jfljfjf", "inventory"=>"3"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 100000], ["created_at", "2020-03-29 21:16:13.122491"], ["updated_at", "2020-03-29 21:16:13.122491"], ["inventory", 3], ["description", "jfljfjf"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.16ms)
+Completed 201 Created in 10ms (Views: 0.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:16:37 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 82ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:16:52 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M8NJH+9tGs6eBM13nlcR0qC2RlcXJZwco0pPScRtVtQ/tZF8+4tbZvDMHzyig8vPUCwuZffweW2BIORGnKEoGQ==", "product"=>{"name"=>"Prairie Squid ", "price"=>"100000", "description"=>"fdfdf", "inventory"=>"3"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 100000], ["created_at", "2020-03-29 21:16:52.821445"], ["updated_at", "2020-03-29 21:16:52.821445"], ["inventory", 3], ["description", "fdfdf"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 13ms (Views: 0.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:17:34 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 94ms (Views: 91.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:17:45 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LcuQkbypZn3TKKhUSGO93P8gCZlKLDm8wPTThSWNJ7AhvUjyqE8n1b3geh90t2fBD7phq6r53M3inniKfUFZfQ==", "product"=>{"name"=>"Product 12", "price"=>"1000", "description"=>"jfdjfjf", "inventory"=>"23"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Product 12"], ["price", 1000], ["created_at", "2020-03-29 21:17:45.955832"], ["updated_at", "2020-03-29 21:17:45.955832"], ["inventory", 23], ["description", "jfdjfjf"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.09ms)
+Completed 201 Created in 18ms (Views: 0.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:31:38 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 146ms (Views: 101.8ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:31:49 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"41KqZsmeRwspHJOfgJ0WxEPo1lk17dBqevT0hkKapLfvJHIF3XgGo0fUQdS8SczZs3K+a9U4NRtYnl+JGlbaeg==", "product"=>{"name"=>"Prairie Squid ", "price"=>"1000", "description"=>"fdfdfj", "inventory"=>"23"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Prairie Squid "], ["price", 1000], ["created_at", "2020-03-29 21:31:49.934100"], ["updated_at", "2020-03-29 21:31:49.934100"], ["inventory", 23], ["description", "fdfdfj"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 32]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (143.71ms)
+Completed 201 Created in 258ms (Views: 240.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-03-29 17:38:05 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2020-03-29 17:38:18 -0400
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lXFyTWb4o0EJTBdkDoxCByqIlIt7olKYFJqKse+6/R+ZB6ouch7i6WeExS8yWJga2hL8uZt3t+k28CG+t3aD0g==", "product"=>{"name"=>"Product 12", "price"=>"234", "description"=>"fdofuoduf", "inventory"=>"3"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Product 12"], ["price", 234], ["created_at", "2020-03-29 21:38:18.299119"], ["updated_at", "2020-03-29 21:38:18.299119"], ["inventory", 3], ["description", "fdofuoduf"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 33]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (7.24ms)
+Completed 201 Created in 17ms (Views: 7.1ms | ActiveRecord: 4.7ms)
+
+
